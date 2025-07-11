@@ -1,11 +1,11 @@
+import logoImage from "@assets/AE990F09-C55F-445A-AE33-361BA27C0C43_1752271442098.png";
+
 export default function Logo() {
   return (
-    <div className="flex flex-col items-center">
-      {/* Digital clock display showing 4:00 */}
-      <div className="bg-slate-800 golf-green clock-font text-sm px-2 py-1 rounded border">
-        4:00
-      </div>
-      <span className="golf-green font-bold text-lg tracking-wide">Under</span>
-    </div>
+    <img 
+      src={logoImage} 
+      alt="4Under Logo" 
+      className="h-10 w-auto"
+    />
   );
 }

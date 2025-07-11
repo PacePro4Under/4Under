@@ -101,12 +101,7 @@ export default function Layout({ children }: LayoutProps) {
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="flex flex-col items-center">
-                  <div className="bg-slate-700 golf-green clock-font text-sm px-2 py-1 rounded border">
-                    4:00
-                  </div>
-                  <span className="golf-green font-bold text-lg tracking-wide">Under</span>
-                </div>
+                <Logo />
                 <span className="text-slate-400 text-sm font-medium">.ca</span>
               </div>
               <p className="text-slate-400 mb-4">
