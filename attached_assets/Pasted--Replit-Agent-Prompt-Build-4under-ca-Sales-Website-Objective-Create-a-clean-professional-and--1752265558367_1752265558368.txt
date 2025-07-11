@@ -1,0 +1,78 @@
+🔧 Replit Agent Prompt: Build 4under.ca Sales Website
+
+Objective:
+Create a clean, professional, and mobile-optimized marketing website for 4under.ca — a non-GPS pace-of-play tracking app built for golf course operators and PGA professionals.
+
+⸻
+
+🔗 Domain & Branding
+	•	Domain: 4under.ca
+	•	Logo: Styled with a digital clock showing 4:00 above the word Under
+	•	Tagline: “Built by pros, for pros.”
+	•	Color Palette: Green and white (match the logo)
+
+⸻
+
+🧭 Page Structure (Multi-Page Navigation)
+
+Build the following pages using a responsive layout:
+	1.	Home
+	2.	Features
+	3.	Request Demo
+	4.	Contact
+	5.	FAQ
+
+⸻
+
+✅ Page Requirements
+
+Home
+	•	Brief, punchy overview of what 4under does
+	•	Tagline: “Built by pros, for pros.”
+	•	Short pitch: “The most efficient, affordable pace-of-play solution — no GPS required.”
+
+Features
+
+Highlight these key features with clean icons or illustrations:
+	•	Live pace tracking and forecasting
+	•	Play coordinator intervention tracking
+	•	Reporting and analytics (with sample stat layout)
+	•	Rental set tracking
+	•	Shuttle request notifications
+	•	Non-GPS = No upfront hardware costs
+
+Request Demo
+	•	Include a form with these fields:
+	•	Name
+	•	Course
+	•	Role
+	•	Email
+	•	Phone
+	•	Add a green “Start Your Free Trial” call-to-action button
+	•	Form submissions should log to a Google Sheet (set up placeholder for now)
+
+Contact
+	•	Basic contact form
+	•	Optional email placeholder
+
+FAQ
+
+Answer common questions (e.g., “Does this require GPS?” → No, “How does tracking work?” → Via coordinators using tablets)
+
+⸻
+
+⚙️ Technical Requirements
+	•	Do not include pricing
+	•	No video or blog section
+	•	Do not mention Glen Abbey or any real course names
+	•	Must be easy for the owner to edit text/images (use Markdown or simple HTML blocks if needed)
+	•	Publish using Replit Hosting for now
+	•	Site must be mobile- and desktop-optimized
+	•	Include Privacy Policy and Terms of Use
+	•	Prepare for future Mailchimp or CRM integration
+
+⸻
+
+🧩 Optional Add-Ons (Don’t build yet, but allow placeholders for):
+	•	Testimonials section (to be added later)
+	•	Analytics tools like Google Analytics
