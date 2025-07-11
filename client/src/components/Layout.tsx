@@ -32,9 +32,8 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center">
               <Logo />
-              <span className="text-slate-600 text-sm font-medium">.ca</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -100,9 +99,8 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center mb-4">
                 <Logo />
-                <span className="text-slate-400 text-sm font-medium">.ca</span>
               </div>
               <p className="text-slate-400 mb-4">
                 Professional pace-of-play tracking built by golf pros, for golf pros. Transform your course operations with our efficient, affordable solution.
