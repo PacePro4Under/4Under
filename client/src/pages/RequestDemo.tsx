@@ -55,8 +55,8 @@ export default function RequestDemo() {
     },
     onSuccess: () => {
       toast({
-        title: "Demo Request Submitted!",
-        description: "We'll contact you within 24 hours to schedule your demonstration.",
+        title: "Thanks for reaching out!",
+        description: "We'll be in touch shortly to schedule your free trial and onboarding call.",
       });
       form.reset();
     },
@@ -78,10 +78,10 @@ export default function RequestDemo() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Request Your Free Demo
+            Start your free 2-week trial
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            See how 4under can transform your course operations. Fill out the form below and we'll schedule a personalized demonstration.
+            Includes full access + a personal onboarding session.
           </p>
         </div>
 
@@ -194,10 +194,10 @@ export default function RequestDemo() {
                   className="bg-golf-green text-white px-12 py-4 text-lg hover:bg-golf-dark shadow-lg"
                   disabled={submitDemoMutation.isPending}
                 >
-                  {submitDemoMutation.isPending ? "Submitting..." : "Start Your Free Trial"}
+                  {submitDemoMutation.isPending ? "Submitting..." : "Start My Free Trial"}
                 </Button>
                 <p className="text-sm text-slate-500 mt-4">
-                  * Required fields. We'll respond within 24 hours.
+                  * Required fields. We'll be in touch shortly to schedule your free trial and onboarding call.
                 </p>
               </div>
             </form>

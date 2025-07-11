@@ -78,64 +78,22 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Get in Touch
+            Have a question? Want to talk through your course's pace challenges?
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Have questions about 4under? We're here to help. Reach out to our team for support, partnership opportunities, or general inquiries.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <Card className="p-8 shadow-sm">
             <CardContent className="p-0">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Contact Information</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-golf-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="golf-green h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
-                    <p className="text-slate-600">info@4under.ca</p>
-                    <p className="text-sm text-slate-500">We typically respond within 24 hours</p>
-                  </div>
+              <div className="text-center">
+                <div className="w-20 h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Mail className="golf-green h-10 w-10" />
                 </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-golf-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="golf-green h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Phone Support</h3>
-                    <p className="text-slate-600">1-800-4UNDER (1-800-486-337)</p>
-                    <p className="text-sm text-slate-500">Monday - Friday, 8 AM - 6 PM EST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-golf-light rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="golf-green h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Business Hours</h3>
-                    <p className="text-slate-600">Monday - Friday: 8:00 AM - 6:00 PM EST</p>
-                    <p className="text-slate-600">Saturday: 9:00 AM - 3:00 PM EST</p>
-                    <p className="text-slate-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Partnership Inquiry */}
-              <div className="mt-8 p-6 bg-golf-light rounded-lg">
-                <h3 className="font-semibold text-slate-900 mb-2">Partnership Opportunities</h3>
-                <p className="text-slate-600 text-sm">
-                  Interested in partnering with 4under? We're always looking to collaborate with golf industry leaders.
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">📧 cameron.cox.golf@gmail.com</h2>
+                <p className="text-lg text-slate-600">
+                  You'll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
                 </p>
-                <a href="mailto:partnerships@4under.ca" className="golf-green font-medium text-sm hover:text-golf-dark transition-colors">
-                  partnerships@4under.ca
-                </a>
               </div>
             </CardContent>
           </Card>
