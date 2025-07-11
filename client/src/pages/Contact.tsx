@@ -74,137 +74,32 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-20 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+    <div className="min-h-screen bg-white">
+      {/* Header Section */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
             Have a question? Want to talk through your course's pace challenges?
           </h1>
         </div>
+      </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <Card className="p-8 shadow-sm">
-            <CardContent className="p-0">
-              <div className="text-center">
-                <div className="w-20 h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Mail className="golf-green h-10 w-10" />
-                </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">📧 cameron.cox.golf@gmail.com</h2>
-                <p className="text-lg text-slate-600">
-                  You'll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Contact Form */}
-          <Card className="p-8 shadow-sm">
-            <CardContent className="p-0">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Send us a Message</h2>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <FormField
-                      control={form.control}
-                      name="firstName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>First Name *</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="lastName"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Last Name *</FormLabel>
-                          <FormControl>
-                            <Input {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                  </div>
-
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address *</FormLabel>
-                        <FormControl>
-                          <Input type="email" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="subject"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Subject *</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="general">General Inquiry</SelectItem>
-                            <SelectItem value="support">Technical Support</SelectItem>
-                            <SelectItem value="partnership">Partnership Opportunity</SelectItem>
-                            <SelectItem value="demo">Demo Request</SelectItem>
-                            <SelectItem value="billing">Billing Question</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="message"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Message *</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="Tell us how we can help you..."
-                            rows={5}
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <Button 
-                    type="submit" 
-                    className="w-full bg-golf-green text-white py-3 hover:bg-golf-dark"
-                    disabled={submitContactMutation.isPending}
-                  >
-                    {submitContactMutation.isPending ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
+      {/* Contact Section */}
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <div className="bg-white p-12 rounded-lg shadow-sm">
+            <div className="w-20 h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-8">
+              <Mail className="golf-green h-10 w-10" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+              cameron.cox.golf@gmail.com
+            </h2>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              You'll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

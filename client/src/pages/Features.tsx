@@ -1,54 +1,37 @@
 import { Link } from "wouter";
-import { 
-  Clock, 
-  UserCheck, 
-  BarChart3, 
-  ShoppingCart, 
-  Car, 
-  DollarSign 
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 export default function Features() {
   const coreTools = [
     {
-      icon: UserCheck,
       title: "Starter Check-In",
       description: "Log names, carts, and confirm pace talks. Tracks who received expectations at the tee."
     },
     {
-      icon: Clock,
       title: "Manual Checkpoints",
       description: "Staff can track where any group is (tee, fairway, green) and log checkpoint times."
     },
     {
-      icon: BarChart3,
       title: "Real-Time Dashboard",
       description: "View every group's pace status live. Auto-flags slow play. Includes color-coded pace and group history."
     },
     {
-      icon: UserCheck,
       title: "Shotgun + Split Tee Support",
       description: "Supports A/B waves, shotgun starts, and hole-by-hole tracking for tournament formats."
     },
     {
-      icon: BarChart3,
       title: "TV Display Mode",
       description: "Read-only live pace board for pro shops or marshal tents."
     },
     {
-      icon: BarChart3,
       title: "PDF Reports",
       description: "Export daily summaries for management, committees, or record-keeping."
     },
     {
-      icon: ShoppingCart,
       title: "Rental Set Tracking",
       description: "Assign and track rental clubs. Alert the starter or pro shop when a set is out."
     },
     {
-      icon: DollarSign,
       title: "Admin Panel",
       description: "Change pace expectations, control format logic, or manage features on the fly."
     }
@@ -64,80 +47,80 @@ export default function Features() {
   ];
 
   return (
-    <div className="py-20 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
             What 4Under Does — In Plain Terms
           </h1>
-          <div className="text-lg text-slate-600 max-w-3xl mx-auto space-y-4">
+          <div className="text-lg text-slate-700 max-w-3xl mx-auto space-y-6">
             <p>You know the drill:</p>
-            <ul className="text-left list-disc list-inside space-y-2">
+            <ul className="text-left list-disc list-inside space-y-2 text-slate-600">
               <li>The tee sheet's packed.</li>
               <li>Golfers are calling the shop about slow play.</li>
               <li>Your marshal has a radio, but no proof.</li>
               <li>You're relying on gut, memory, and guesswork.</li>
             </ul>
-            <p className="font-semibold">
+            <p className="font-semibold text-slate-900">
               4Under changes that. It gives your team real-time visibility, structure, and reporting to manage pace of play with confidence — and ditch the pen and paper once and for all.
             </p>
           </div>
         </div>
+      </section>
 
-        {/* Core Tools */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Core Tools</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Core Tools Section */}
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Core Tools</h2>
+          <div className="space-y-8">
             {coreTools.map((tool, index) => (
-              <Card key={index} className="p-6 shadow-sm border border-slate-200">
-                <CardContent className="p-0">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-golf-light rounded-lg flex items-center justify-center flex-shrink-0">
-                      <tool.icon className="golf-green h-6 w-6" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3">{tool.title}</h3>
-                      <p className="text-slate-600">{tool.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">{tool.title}</h3>
+                <p className="text-lg text-slate-700">{tool.description}</p>
+                {/* Placeholder for future screenshot */}
+                <div className="mt-6 bg-slate-100 h-32 rounded-lg flex items-center justify-center">
+                  <span className="text-slate-400 text-sm">Screenshot placeholder</span>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Real Results */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Real Results from the Field</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Results Section */}
+      <section className="bg-white py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Real Results from the Field</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {results.map((result, index) => (
-              <Card key={index} className="p-6 shadow-sm border border-slate-200">
-                <CardContent className="p-0">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-golf-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">✓</span>
-                    </div>
-                    <p className="text-slate-700 font-medium">{result}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={index} className="flex items-start space-x-4 p-6 bg-slate-50 rounded-lg">
+                <div className="w-6 h-6 bg-golf-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-white text-sm font-bold">✓</span>
+                </div>
+                <p className="text-lg text-slate-700 font-medium">{result}</p>
+              </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-golf-green rounded-xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Course Operations?</h3>
-            <p className="text-golf-light mb-6">See how 4under can streamline your pace-of-play management.</p>
-            <Link href="/demo">
-              <Button className="bg-white golf-green px-8 py-3 hover:bg-slate-100">
-                Request Your Demo Today
-              </Button>
-            </Link>
-          </div>
+      {/* CTA Section */}
+      <section className="bg-golf-green py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            Ready to Transform Your Course Operations?
+          </h2>
+          <p className="text-lg text-white/90 mb-8">
+            See how 4Under can streamline your pace-of-play management.
+          </p>
+          <Link href="/demo">
+            <Button className="bg-white text-golf-green px-12 py-4 text-lg hover:bg-slate-100 rounded-lg shadow-lg font-semibold">
+              Start Your Free Trial
+            </Button>
+          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

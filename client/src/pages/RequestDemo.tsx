@@ -74,136 +74,142 @@ export default function RequestDemo() {
   };
 
   return (
-    <div className="py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+    <div className="min-h-screen bg-white">
+      {/* Header Section */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
             Start your free 2-week trial
           </h1>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-700 max-w-2xl mx-auto">
             Includes full access + a personal onboarding session.
           </p>
         </div>
+      </section>
 
-        <div className="bg-slate-50 rounded-xl p-8 md:p-12">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Full Name *</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your full name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="course"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Golf Course / Facility *</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Enter your course or facility name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="role"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Role *</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+      {/* Form Section */}
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-2xl mx-auto px-6">
+          <div className="bg-white p-8 md:p-12 rounded-lg shadow-sm">
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium">Name</FormLabel>
                       <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select your role" />
-                        </SelectTrigger>
+                        <Input 
+                          placeholder="Enter your full name" 
+                          className="py-3 text-lg"
+                          {...field} 
+                        />
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="general-manager">General Manager</SelectItem>
-                        <SelectItem value="golf-professional">Golf Professional</SelectItem>
-                        <SelectItem value="course-superintendent">Course Superintendent</SelectItem>
-                        <SelectItem value="operations-manager">Operations Manager</SelectItem>
-                        <SelectItem value="owner">Owner</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email Address *</FormLabel>
-                    <FormControl>
-                      <Input type="email" placeholder="Enter your email address" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="course"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium">Course</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Enter your course or facility name" 
+                          className="py-3 text-lg"
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Phone Number *</FormLabel>
-                    <FormControl>
-                      <Input type="tel" placeholder="Enter your phone number" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="role"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium">Role</FormLabel>
+                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <FormControl>
+                          <SelectTrigger className="py-3 text-lg">
+                            <SelectValue placeholder="Select your role" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="general-manager">General Manager</SelectItem>
+                          <SelectItem value="golf-professional">Golf Professional</SelectItem>
+                          <SelectItem value="course-superintendent">Course Superintendent</SelectItem>
+                          <SelectItem value="operations-manager">Operations Manager</SelectItem>
+                          <SelectItem value="owner">Owner</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <FormField
-                control={form.control}
-                name="comments"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Additional Comments (Optional)</FormLabel>
-                    <FormControl>
-                      <Textarea 
-                        placeholder="Tell us about your specific needs or questions..."
-                        rows={4}
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium">Email</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="email" 
+                          placeholder="Enter your email address" 
+                          className="py-3 text-lg"
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="text-center pt-6">
-                <Button 
-                  type="submit" 
-                  className="bg-golf-green text-white px-12 py-4 text-lg hover:bg-golf-dark shadow-lg"
-                  disabled={submitDemoMutation.isPending}
-                >
-                  {submitDemoMutation.isPending ? "Submitting..." : "Start My Free Trial"}
-                </Button>
-                <p className="text-sm text-slate-500 mt-4">
-                  * Required fields. We'll be in touch shortly to schedule your free trial and onboarding call.
-                </p>
-              </div>
-            </form>
-          </Form>
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-medium">Phone</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="tel" 
+                          placeholder="Enter your phone number" 
+                          className="py-3 text-lg"
+                          {...field} 
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <div className="text-center pt-8">
+                  <Button 
+                    type="submit" 
+                    className="bg-golf-green text-white px-12 py-4 text-lg hover:bg-golf-hover rounded-lg shadow-lg font-semibold"
+                    disabled={submitDemoMutation.isPending}
+                  >
+                    {submitDemoMutation.isPending ? "Submitting..." : "Start My Free Trial"}
+                  </Button>
+                  <p className="text-slate-600 mt-6">
+                    We'll be in touch shortly to schedule your free trial and onboarding call.
+                  </p>
+                </div>
+              </form>
+            </Form>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

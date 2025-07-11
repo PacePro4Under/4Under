@@ -1,103 +1,98 @@
 import { Link } from "wouter";
-import { TrendingUp, Tablet, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-golf-light via-white to-slate-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
-              Built by pros, for pros.
-            </h1>
-            <p className="text-xl md:text-2xl golf-green font-semibold mb-4">
-              Track pace. Improve experience. No GPS required.
-            </p>
-            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
+    <div className="min-h-screen">
+      {/* Hero Section - Story First */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
+            Built by pros, for pros.
+          </h1>
+          <p className="text-xl md:text-2xl golf-green font-semibold mb-8">
+            Track pace. Improve experience. No GPS required.
+          </p>
+          <div className="text-lg md:text-xl text-slate-700 space-y-6 max-w-3xl mx-auto">
+            <p>
               4Under is a low-cost, browser-based pace of play system built by golf professionals for golf professionals. It gives your marshals and play coordinators the tools they need to monitor, manage, and improve pace of play in real time—without relying on GPS, sensors, or expensive technology.
             </p>
-            <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
+            <p>
               Whether you're running daily tee times, split tees, or shotgun events, 4Under helps you solve pace problems before they start and gives your team the structure to operate with confidence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/demo">
-                <Button className="bg-golf-green text-white px-8 py-4 text-lg hover:bg-golf-dark">
-                  Start Your Free Trial
-                </Button>
-              </Link>
-              <Link href="/features">
-                <Button 
-                  variant="outline" 
-                  className="border-2 border-golf-green golf-green px-8 py-4 text-lg hover:bg-golf-light"
-                >
-                  View Features
-                </Button>
-              </Link>
-            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* What Makes 4Under Different */}
-      <div className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Trust Section */}
+      <section className="bg-slate-50 py-16">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-8">
               What Makes 4Under Different
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ Reduce average round times by 15+ minutes</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Reduce average round times by 15+ minutes
+              </h3>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ Eliminate slow play complaints and refund requests</h3>
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Eliminate slow play complaints and refund requests
+              </h3>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <Tablet className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ Built-in tools for tournaments, rentals, and analytics</h3>
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Built-in tools for tournaments, rentals, and analytics
+              </h3>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ Works on any phone, tablet, or desktop</h3>
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Works on any phone, tablet, or desktop
+              </h3>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <Tablet className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ No downloads, no GPS, no tech headaches</h3>
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                No downloads, no GPS, no tech headaches
+              </h3>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="golf-green h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">✅ Built by a Head Pro — not a tech company</h3>
+            <div className="bg-white p-8 rounded-lg">
+              <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                Built by a Head Pro — not a tech company
+              </h3>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Banner */}
-      <div className="py-12 bg-golf-green text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold">
+      {/* Quote Banner */}
+      <section className="bg-golf-green py-12">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-xl md:text-2xl font-semibold text-white">
             Give your marshals the facts — not the friction.
           </h2>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section - Bottom of scroll */}
+      <section className="bg-white py-16">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            Ready to transform your course operations?
+          </h2>
+          <p className="text-lg text-slate-600 mb-8">
+            See how 4Under can streamline your pace-of-play management with a free 2-week trial.
+          </p>
+          <Link href="/demo">
+            <Button className="bg-golf-green text-white px-12 py-4 text-lg hover:bg-golf-hover rounded-lg shadow-lg">
+              Start Your Free Trial
+            </Button>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

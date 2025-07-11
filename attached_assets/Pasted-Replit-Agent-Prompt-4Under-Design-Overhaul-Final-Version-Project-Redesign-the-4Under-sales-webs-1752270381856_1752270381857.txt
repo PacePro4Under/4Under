@@ -1,0 +1,88 @@
+Replit Agent Prompt: 4Under Design Overhaul (Final Version)
+
+Project: Redesign the 4Under sales website to feel like a trusted, professional brand for golf course operators — not just a basic software tool. The tone, layout, and interface must reflect that this product has been tested, proven, and built by someone who lives the pace-of-play challenge. The final design should look clean, credible, and mobile-first — with the story leading the user naturally to the call to action.
+
+⸻
+
+🎯 Visual + UI Goals:
+	•	Mobile-first layout (most users will visit from a phone)
+	•	Story-focused flow: benefits → credibility → product → CTA
+	•	Clean, visual, scroll-friendly experience
+	•	Remove all emojis (✅ etc.)
+	•	Use whitespace, bold section headers, and spacing to guide attention
+	•	Clear CTA buttons at bottom of scroll, not top-heavy
+
+⸻
+
+🎨 Color Palette (from logo):
+	•	Primary Green: #174C3C
+	•	Secondary Green (hover/accents): #276D57
+	•	Text/Background: White (#FFFFFF) with dark green for headings and buttons
+
+⸻
+
+🔤 Typography:
+	•	Use a clean sans-serif font for body text (e.g., Inter, Lato, or Helvetica Neue)
+	•	If replicating the “Under” wordmark, use a soft script for the logo only — not body text
+	•	Prioritize readability across devices
+
+⸻
+
+📱 Layout Rules:
+	•	Keep navigation sticky on top with clean, single-row links
+	•	Collapse to hamburger menu on mobile
+	•	Use full-width section blocks with generous spacing
+	•	Avoid boxed content — let the page feel open and modern
+	•	Add placeholder boxes for future screenshots (dashboard, starter, shotgun, etc.)
+	•	Keep forms simple, clean, and mobile-tappable
+
+⸻
+
+🧱 Page Structure:
+	1.	Homepage
+	•	Story-led intro: what this solves, who it’s for
+	•	Brand trust: built by pros, used on real courses
+	•	Product summary: benefits and features
+	•	CTA at bottom: “Start Your Free Trial” (link to Google Form)
+	2.	Features
+	•	Use sectioned layout (one feature per row)
+	•	Add placeholders for visuals
+	•	Focus on clarity, not icons or infographics
+	3.	FAQ
+	•	Expandable accordion for questions
+	•	Big readable font for mobile
+	•	No fluff — just real answers
+	4.	Request Demo
+	•	Short form
+	•	Tappable fields
+	•	Confirmation message after submit
+	5.	Contact
+	•	List email: cameron.cox.golf@gmail.com
+	•	Light section with no form needed
+	6.	Legal
+	•	Plain text Privacy Policy + Terms of Use
+	•	Use neutral white background
+
+⸻
+
+⚠️ DO NOT:
+	•	Do not use emojis
+	•	Do not auto-replace or rewrite any of the copy — use the supplied content exactly
+	•	Do not add stock icons or photos unless placeholders are needed for future visuals
+	•	Do not overload the top of the homepage with buttons — tell the story first
+
+⸻
+
+✅ Success =
+	•	A visual, mobile-first website that feels like a proven industry tool
+	•	Visitors can scroll the story and feel confident before being asked to take action
+	•	The CTA (demo signup) is clear, low-friction, and placed near the end of the scroll
+	•	The entire site feels clean, modern, and purpose-built for the golf industry
+
+⸻
+
+Once you paste this into Replit’s AI agent, it will:
+	•	Rebuild your layout with a brand-first feel
+	•	Strip out emoji and default junk
+	•	Respect your visual identity and tone
+	•	Prepare for screenshot additions later

@@ -24,9 +24,10 @@
   --ring: hsl(142, 76%, 36%);
   --radius: 0.5rem;
   
-  /* Golf-specific colors */
-  --golf-green: hsl(142, 76%, 36%);
-  --golf-dark: hsl(142, 76%, 30%);
+  /* 4Under brand colors */
+  --golf-green: #174C3C;
+  --golf-dark: #174C3C;
+  --golf-hover: #276D57;
   --golf-light: hsl(142, 50%, 96%);
 }
 
@@ -62,17 +63,17 @@
   }
 }
 
-/* Custom golf-themed classes */
+/* 4Under brand classes */
 .golf-green {
-  color: hsl(142, 76%, 36%);
+  color: #174C3C;
 }
 
 .bg-golf-green {
-  background-color: hsl(142, 76%, 36%);
+  background-color: #174C3C;
 }
 
 .bg-golf-dark {
-  background-color: hsl(142, 76%, 30%);
+  background-color: #174C3C;
 }
 
 .bg-golf-light {
@@ -80,11 +81,11 @@
 }
 
 .border-golf-green {
-  border-color: hsl(142, 76%, 36%);
+  border-color: #174C3C;
 }
 
-.hover\:bg-golf-dark:hover {
-  background-color: hsl(142, 76%, 30%);
+.hover\:bg-golf-hover:hover {
+  background-color: #276D57;
 }
 
 .hover\:bg-golf-light:hover {
@@ -92,7 +93,12 @@
 }
 
 .hover\:text-golf-green:hover {
-  color: hsl(142, 76%, 36%);
+  color: #174C3C;
+}
+
+/* Typography */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Digital clock font styling */

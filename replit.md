@@ -8,6 +8,19 @@ This is a modern, professional marketing website for 4under.ca - a non-GPS pace-
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**January 11, 2025 - Major Design Overhaul:**
+- Implemented mobile-first, story-driven layout approach
+- Updated brand colors to official 4Under palette (#174C3C primary, #276D57 hover)
+- Removed all emojis and icons for clean, professional appearance
+- Restructured all pages with full-width sections and generous whitespace
+- Added placeholder boxes for future screenshots on Features page
+- Positioned CTAs at bottom of scroll rather than top-heavy approach
+- Updated typography to use Inter font for better readability
+- Simplified forms with larger, more tappable inputs for mobile
+- Cleaned navigation to be sticky with single-row layout
+
 ## System Architecture
 
 ### Frontend Architecture

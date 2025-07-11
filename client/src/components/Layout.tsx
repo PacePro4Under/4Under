@@ -29,12 +29,12 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/" className="flex items-center space-x-2">
               <Logo />
-              <span className="hidden sm:block text-slate-600 text-sm font-medium">.ca</span>
+              <span className="text-slate-600 text-sm font-medium">.ca</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -43,10 +43,10 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`transition-colors ${
+                  className={`font-medium transition-colors ${
                     isActive(item.href)
-                      ? "golf-green font-medium"
-                      : "text-slate-600 hover:text-golf-green"
+                      ? "golf-green"
+                      : "text-slate-700 hover:text-golf-green"
                   }`}
                 >
                   {item.name}
@@ -60,25 +60,25 @@ export default function Layout({ children }: LayoutProps) {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-slate-600" />
+                <X className="h-6 w-6 text-slate-700" />
               ) : (
-                <Menu className="h-6 w-6 text-slate-600" />
+                <Menu className="h-6 w-6 text-slate-700" />
               )}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-slate-200">
-              <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="md:hidden border-t border-slate-200 bg-white">
+              <div className="py-4 space-y-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-3 py-2 transition-colors ${
+                    className={`block px-4 py-3 font-medium transition-colors ${
                       isActive(item.href)
-                        ? "golf-green font-medium"
-                        : "text-slate-600"
+                        ? "golf-green bg-slate-50"
+                        : "text-slate-700 hover:text-golf-green hover:bg-slate-50"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
