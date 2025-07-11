@@ -1,0 +1,191 @@
+Absolutely, Cameron — here’s the full, final copy for your Replit website, now updated with your name and email throughout. This version is polished, aligned with your voice, and ready to paste into Replit or hand to a developer.
+
+⸻
+
+✅ 4Under Website Copy
+
+Tone: Professional, peer-to-peer, golf-operator language
+CTA: Start Your Free Trial → (linked to Google Form)
+Contact Email: cameron.cox.golf@gmail.com
+
+⸻
+
+🏠 Homepage
+
+Headline:
+
+Built by pros, for pros.
+
+Subheadline:
+
+Track pace. Improve experience. No GPS required.
+
+Intro Paragraph:
+
+4Under is a low-cost, browser-based pace of play system built by golf professionals for golf professionals. It gives your marshals and play coordinators the tools they need to monitor, manage, and improve pace of play in real time—without relying on GPS, sensors, or expensive technology.
+
+Whether you’re running daily tee times, split tees, or shotgun events, 4Under helps you solve pace problems before they start and gives your team the structure to operate with confidence.
+
+Call to Action:
+
+Start Your Free Trial → (link to Google Form)
+
+⸻
+
+What Makes 4Under Different
+	•	✅ Reduce average round times by 15+ minutes
+	•	✅ Eliminate slow play complaints and refund requests
+	•	✅ Built-in tools for tournaments, rentals, and analytics
+	•	✅ Works on any phone, tablet, or desktop
+	•	✅ No downloads, no GPS, no tech headaches
+	•	✅ Built by a Head Pro — not a tech company
+
+⸻
+
+Banner (Optional):
+
+Give your marshals the facts — not the friction.
+
+⸻
+
+⚙️ Features Page
+
+Header:
+
+What 4Under Does — In Plain Terms
+
+Intro Paragraph:
+
+You know the drill:
+	•	The tee sheet’s packed.
+	•	Golfers are calling the shop about slow play.
+	•	Your marshal has a radio, but no proof.
+	•	You’re relying on gut, memory, and guesswork.
+
+4Under changes that. It gives your team real-time visibility, structure, and reporting to manage pace of play with confidence — and ditch the pen and paper once and for all.
+
+⸻
+
+Core Tools
+	•	Starter Check-In
+Log names, carts, and confirm pace talks. Tracks who received expectations at the tee.
+	•	Manual Checkpoints
+Staff can track where any group is (tee, fairway, green) and log checkpoint times.
+	•	Real-Time Dashboard
+View every group’s pace status live. Auto-flags slow play. Includes color-coded pace and group history.
+	•	Shotgun + Split Tee Support
+Supports A/B waves, shotgun starts, and hole-by-hole tracking for tournament formats.
+	•	TV Display Mode
+Read-only live pace board for pro shops or marshal tents.
+	•	PDF Reports
+Export daily summaries for management, committees, or record-keeping.
+	•	Rental Set Tracking
+Assign and track rental clubs. Alert the starter or pro shop when a set is out.
+	•	Admin Panel
+Change pace expectations, control format logic, or manage features on the fly.
+
+⸻
+
+Real Results from the Field
+	•	Cut average rounds by 15+ minutes
+	•	Identified slow holes and logjam zones
+	•	Caught carts going out multiple times per day
+	•	Replaced “heated” pace conversations with calm, data-backed coaching
+	•	Empowered both senior staff and junior marshals to do their jobs better
+	•	Ended daily call-ins about slow play at our own course
+
+⸻
+
+❓ FAQ Page
+
+Frequently Asked by Golf Operators
+
+Q: Do I need GPS or expensive hardware?
+A: No. 4Under runs in any browser. No tech installs. No extra costs.
+
+Q: Will my older marshals understand how to use it?
+A: Yes. It’s used daily by staff aged 70+ and younger staff alike. If they can tap a hole number, they can use 4Under.
+
+Q: How much does it cost?
+A: It’s a low-cost monthly subscription. You only pay for the months you use it.
+
+Q: Can this work for shotgun tournaments or split tees?
+A: Absolutely. It’s built to handle real-world formats like A/B waves, staggered starts, and shotguns.
+
+Q: What’s included in the free trial?
+A: Two full weeks of access plus a 1-on-1 onboarding call with Cameron to walk your team through setup.
+
+Q: Can multiple staff be on the system at once?
+A: Yes. Everyone sees the same data in real time — marshals, starters, pro shop, or backshop.
+
+⸻
+
+📩 Request Demo Page
+
+Header:
+
+Start your free 2-week trial
+
+Subhead:
+
+Includes full access + a personal onboarding session.
+
+[Start My Free Trial →]
+(Link to Google Form)
+
+Form Fields:
+	•	Name
+	•	Course
+	•	Role
+	•	Email
+	•	Phone
+
+Confirmation Message:
+Thanks for reaching out! We’ll be in touch shortly to schedule your free trial and onboarding call.
+
+⸻
+
+📬 Contact Page
+
+Have a question? Want to talk through your course’s pace challenges?
+
+📧 cameron.cox.golf@gmail.com
+
+You’ll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
+
+⸻
+
+🔒 Legal Pages
+
+Privacy Policy (Canada Compliant)
+
+We only collect the personal data you choose to provide through our demo request form. We do not sell, share, or track any data beyond what is needed to follow up with interested operators. You may contact us at any time to request deletion of your data.
+
+Terms of Use
+
+By using 4Under.ca or the 4Under app, you agree to use the system professionally and lawfully. All features, content, and tools are the intellectual property of 4Under and may not be copied, redistributed, or sold without express permission.
+
+⸻
+
+✅ Final Notes:
+	•	Replace all placeholder CTA links with your real Google Form link
+	•	Add your logo (logo.png) to the header
+	•	Use green/white theme to match your branding
+	•	Make sure the mobile view is optimized
+	•	When ready, add a “How It Works” section with screenshots of:
+	•	Dashboard
+	•	Starter tab
+	•	Shotgun tab
+	•	Checkpoint entry
+	•	Admin panel
+	•	Reports view
+
+⸻
+
+Let me know if you’d like this exported as:
+	•	📄 Google Doc
+	•	📥 PDF
+	•	🧾 HTML sections for Replit
+	•	🖨️ Printable 1-pager
+
+You’re locked in, Cameron. This is a product that speaks from the inside out — and it shows.
