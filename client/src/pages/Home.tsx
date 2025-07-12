@@ -1,24 +1,27 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import { useContentByPage, getContentValue } from "@/hooks/useContent";
 
 export default function Home() {
+  const { content, isLoading } = useContentByPage('home');
+
   return (
     <div className="min-h-screen">
       {/* Hero Section - Story First */}
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
-            Built by pros, for pros.
+            {isLoading ? 'Loading...' : getContentValue(content, 'home_hero_title', 'Built by pros, for pros.')}
           </h1>
           <p className="text-xl md:text-2xl golf-green font-semibold mb-8">
-            Track pace. Improve experience. No GPS required.
+            {isLoading ? 'Loading...' : getContentValue(content, 'home_hero_subtitle', 'Track pace. Improve experience. No GPS required.')}
           </p>
           <div className="text-lg md:text-xl text-slate-700 space-y-6 max-w-3xl mx-auto">
             <p>
-              4Under is a low-cost, browser-based pace of play system built by golf professionals for golf professionals. It gives your marshals and play coordinators the tools they need to monitor, manage, and improve pace of play in real time—without relying on GPS, sensors, or expensive technology.
+              {isLoading ? 'Loading...' : getContentValue(content, 'home_hero_description_1', '4Under is a low-cost, browser-based pace of play system built by golf professionals for golf professionals. It gives your marshals and play coordinators the tools they need to monitor, manage, and improve pace of play in real time—without relying on GPS, sensors, or expensive technology.')}
             </p>
             <p>
-              Whether you're running daily tee times, split tees, or shotgun events, 4Under helps you solve pace problems before they start and gives your team the structure to operate with confidence.
+              {isLoading ? 'Loading...' : getContentValue(content, 'home_hero_description_2', 'Whether you\'re running daily tee times, split tees, or shotgun events, 4Under helps you solve pace problems before they start and gives your team the structure to operate with confidence.')}
             </p>
           </div>
         </div>
@@ -29,7 +32,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-8">
-              What Makes 4Under Different
+              {isLoading ? 'Loading...' : getContentValue(content, 'home_trust_section_title', 'What Makes 4Under Different')}
             </h2>
           </div>
           

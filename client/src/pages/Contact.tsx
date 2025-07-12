@@ -24,6 +24,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useContentByPage, getContentValue } from "@/hooks/useContent";
 
 const contactFormSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -37,6 +38,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const { toast } = useToast();
+  const { content, isLoading } = useContentByPage('contact');
   
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -79,7 +81,7 @@ export default function Contact() {
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
-            Have a question? Want to talk through your course's pace challenges?
+            {isLoading ? 'Loading...' : getContentValue(content, 'contact_page_title', 'Have a question? Want to talk through your course\'s pace challenges?')}
           </h1>
         </div>
       </section>

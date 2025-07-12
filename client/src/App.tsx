@@ -11,22 +11,33 @@ import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
+import AdminLogin from "@/pages/AdminLogin";
+import AdminDashboard from "@/pages/AdminDashboard";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/features" component={Features} />
-        <Route path="/demo" component={RequestDemo} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/faq" component={FAQ} />
-        <Route path="/privacy" component={Privacy} />
-        <Route path="/terms" component={Terms} />
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <Switch>
+      {/* Admin routes - no layout wrapper */}
+      <Route path="/admin/login" component={AdminLogin} />
+      <Route path="/admin" component={AdminDashboard} />
+      
+      {/* Public routes - with layout wrapper */}
+      <Route path="/" nest>
+        <Layout>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/features" component={Features} />
+            <Route path="/demo" component={RequestDemo} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/faq" component={FAQ} />
+            <Route path="/privacy" component={Privacy} />
+            <Route path="/terms" component={Terms} />
+            <Route component={NotFound} />
+          </Switch>
+        </Layout>
+      </Route>
+    </Switch>
   );
 }
 

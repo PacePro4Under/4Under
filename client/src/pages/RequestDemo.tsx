@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useContentByPage, getContentValue } from "@/hooks/useContent";
 
 const demoFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -36,6 +37,7 @@ type DemoFormData = z.infer<typeof demoFormSchema>;
 
 export default function RequestDemo() {
   const { toast } = useToast();
+  const { content, isLoading } = useContentByPage('demo');
   
   const form = useForm<DemoFormData>({
     resolver: zodResolver(demoFormSchema),
@@ -79,10 +81,10 @@ export default function RequestDemo() {
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
-            Start your free 2-week trial
+            {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_title', 'Start your free 2-week trial')}
           </h1>
           <p className="text-xl text-slate-700 max-w-2xl mx-auto">
-            Includes full access + a personal onboarding session.
+            {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_subtitle', 'Includes full access + a personal onboarding session.')}
           </p>
         </div>
       </section>
