@@ -15,6 +15,8 @@ export async function apiRequest(
 ): Promise<any> {
   const defaultHeaders = data ? { "Content-Type": "application/json" } : {};
   const headers = { ...defaultHeaders, ...options?.headers };
+  
+  console.log('API Request:', { method, url, headers, hasData: !!data });
 
   const res = await fetch(url, {
     method,

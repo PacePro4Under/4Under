@@ -100,6 +100,7 @@ export function useAdmin() {
   };
 
   const getAuthHeaders = () => {
+    console.log('getAuthHeaders called - token:', state.token, 'isAuthenticated:', state.isAuthenticated);
     if (!state.token) return {};
     return {
       'Authorization': `Bearer ${state.token}`
