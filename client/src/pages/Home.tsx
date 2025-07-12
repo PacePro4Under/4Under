@@ -11,6 +11,12 @@ export default function Home() {
       {/* Hero Section - Story First */}
       <section className="bg-white py-12 sm:py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          {/* 4Under Brand */}
+          <div className="mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold golf-green mb-2">4Under</h2>
+            <div className="w-24 h-1 bg-golf-green mx-auto"></div>
+          </div>
+          
           <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
             {isLoading ? 'Loading...' : getContentValue(content, 'home_hero_title', 'Built by pros, for pros.')}
           </h1>
