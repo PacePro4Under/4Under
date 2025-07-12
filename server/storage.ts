@@ -82,7 +82,7 @@ export class MemStorage implements IStorage {
 
   private async initializeDefaultContent() {
     const defaultContent: SiteContent[] = [
-      // Home page content
+      // ========== HOME PAGE CONTENT ==========
       {
         id: this.currentSiteContentId++,
         key: "home_hero_title",
@@ -138,7 +138,151 @@ export class MemStorage implements IStorage {
         description: "Title for the 'What Makes 4Under Different' section",
         updatedAt: new Date()
       },
-      // Contact information
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_1",
+        value: "Reduce average round times by 15+ minutes",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 1",
+        description: "First benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_2",
+        value: "Eliminate slow play complaints and refund requests",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 2",
+        description: "Second benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_3",
+        value: "Built-in tools for tournaments, rentals, and analytics",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 3",
+        description: "Third benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_4",
+        value: "Works on any phone, tablet, or desktop",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 4",
+        description: "Fourth benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_5",
+        value: "No downloads, no GPS, no tech headaches",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 5",
+        description: "Fifth benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_benefit_6",
+        value: "Built by a Head Pro — not a tech company",
+        contentType: "text",
+        page: "home",
+        section: "benefits",
+        label: "Benefit 6",
+        description: "Sixth benefit card text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_quote_text",
+        value: "I've been a Head Pro for 15 years, and I built 4Under because I got tired of watching pace problems ruin the experience for my members and guests.",
+        contentType: "text",
+        page: "home",
+        section: "quote",
+        label: "Quote Text",
+        description: "Main quote text in banner",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_quote_author",
+        value: "Cameron Cox, PGA Professional",
+        contentType: "text",
+        page: "home",
+        section: "quote",
+        label: "Quote Author",
+        description: "Author of the quote",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_features_title",
+        value: "Everything you need to manage pace",
+        contentType: "text",
+        page: "home",
+        section: "features",
+        label: "Features Section Title",
+        description: "Title for the features section",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_features_subtitle",
+        value: "No tech experience required. No installation. No headaches.",
+        contentType: "text",
+        page: "home",
+        section: "features",
+        label: "Features Section Subtitle",
+        description: "Subtitle for the features section",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_cta_title",
+        value: "Ready to solve pace problems?",
+        contentType: "text",
+        page: "home",
+        section: "cta",
+        label: "CTA Title",
+        description: "Call to action section title",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_cta_subtitle",
+        value: "Join courses across the country that use 4Under to improve their pace of play.",
+        contentType: "text",
+        page: "home",
+        section: "cta",
+        label: "CTA Subtitle",
+        description: "Call to action section subtitle",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "home_cta_button",
+        value: "Request Free Demo",
+        contentType: "button",
+        page: "home",
+        section: "cta",
+        label: "CTA Button",
+        description: "Main call to action button",
+        updatedAt: new Date()
+      },
+      
+      // ========== CONTACT PAGE CONTENT ==========
       {
         id: this.currentSiteContentId++,
         key: "contact_email",
@@ -161,7 +305,41 @@ export class MemStorage implements IStorage {
         description: "Main title on the contact page",
         updatedAt: new Date()
       },
-      // Demo page content
+      {
+        id: this.currentSiteContentId++,
+        key: "contact_page_subtitle",
+        value: "We're here to help. Send us a message and we'll get back to you within 24 hours.",
+        contentType: "text",
+        page: "contact",
+        section: "hero",
+        label: "Contact Page Subtitle",
+        description: "Subtitle on the contact page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "contact_form_title",
+        value: "Send us a message",
+        contentType: "text",
+        page: "contact",
+        section: "form",
+        label: "Contact Form Title",
+        description: "Title above the contact form",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "contact_submit_button",
+        value: "Send Message",
+        contentType: "button",
+        page: "contact",
+        section: "form",
+        label: "Contact Form Button",
+        description: "Contact form submit button",
+        updatedAt: new Date()
+      },
+      
+      // ========== DEMO PAGE CONTENT ==========
       {
         id: this.currentSiteContentId++,
         key: "demo_page_title",
@@ -182,6 +360,120 @@ export class MemStorage implements IStorage {
         section: "hero",
         label: "Demo Page Subtitle",
         description: "Subtitle on the demo request page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "demo_form_title",
+        value: "Tell us about your course",
+        contentType: "text",
+        page: "demo",
+        section: "form",
+        label: "Demo Form Title",
+        description: "Title above the demo form",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "demo_submit_button",
+        value: "Request Demo",
+        contentType: "button",
+        page: "demo",
+        section: "form",
+        label: "Demo Form Button",
+        description: "Demo form submit button",
+        updatedAt: new Date()
+      },
+      
+      // ========== FEATURES PAGE CONTENT ==========
+      {
+        id: this.currentSiteContentId++,
+        key: "features_page_title",
+        value: "Everything you need to manage pace of play",
+        contentType: "text",
+        page: "features",
+        section: "hero",
+        label: "Features Page Title",
+        description: "Main title on the features page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "features_page_subtitle",
+        value: "Simple, powerful tools that work on any device",
+        contentType: "text",
+        page: "features",
+        section: "hero",
+        label: "Features Page Subtitle",
+        description: "Subtitle on the features page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "features_cta_button",
+        value: "See It In Action",
+        contentType: "button",
+        page: "features",
+        section: "cta",
+        label: "Features CTA Button",
+        description: "Call to action button on features page",
+        updatedAt: new Date()
+      },
+      
+      // ========== NAVIGATION CONTENT ==========
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_home_link",
+        value: "Home",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "Home Navigation Link",
+        description: "Home navigation link text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_features_link",
+        value: "Features",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "Features Navigation Link",
+        description: "Features navigation link text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_demo_link",
+        value: "Request Demo",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "Demo Navigation Link",
+        description: "Demo navigation link text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_contact_link",
+        value: "Contact",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "Contact Navigation Link",
+        description: "Contact navigation link text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_faq_link",
+        value: "FAQ",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "FAQ Navigation Link",
+        description: "FAQ navigation link text",
         updatedAt: new Date()
       }
     ];

@@ -25,6 +25,8 @@ export function useAdmin() {
     const savedToken = localStorage.getItem('admin_token');
     const savedUser = localStorage.getItem('admin_user');
     
+    console.log('Admin hook initialization - token:', savedToken, 'userStr:', savedUser);
+    
     if (savedToken && savedUser) {
       try {
         const user = JSON.parse(savedUser);
@@ -34,7 +36,9 @@ export function useAdmin() {
           isAuthenticated: true,
           isLoading: false,
         });
+        console.log('Admin state restored from localStorage');
       } catch (error) {
+        console.error('Error restoring admin state:', error);
         // Clear invalid data
         localStorage.removeItem('admin_token');
         localStorage.removeItem('admin_user');

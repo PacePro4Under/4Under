@@ -39,32 +39,32 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                Reduce average round times by 15+ minutes
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_1', 'Reduce average round times by 15+ minutes')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                Eliminate slow play complaints and refund requests
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_2', 'Eliminate slow play complaints and refund requests')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                Built-in tools for tournaments, rentals, and analytics
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_3', 'Built-in tools for tournaments, rentals, and analytics')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                Works on any phone, tablet, or desktop
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_4', 'Works on any phone, tablet, or desktop')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                No downloads, no GPS, no tech headaches
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_5', 'No downloads, no GPS, no tech headaches')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
-                Built by a Head Pro — not a tech company
+                {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_6', 'Built by a Head Pro — not a tech company')}
               </h3>
             </div>
           </div>
