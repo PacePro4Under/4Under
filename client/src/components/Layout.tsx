@@ -29,24 +29,34 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-14 sm:h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center touch-manipulation">
+      <nav className="bg-gradient-to-r from-white to-slate-50 shadow-lg border-b-2 border-golf-green sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-18">
+            {/* Logo & Brand */}
+            <Link href="/" className="flex items-center space-x-3 touch-manipulation group">
               <Logo />
+              <div className="hidden sm:block">
+                <span className="text-xl font-bold golf-green group-hover:text-golf-hover transition-colors">
+                  4Under
+                </span>
+                <div className="text-xs text-slate-500 font-medium">
+                  Pace of Play System
+                </div>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6 lg:space-x-8">
+            <div className="hidden lg:flex items-center space-x-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`font-medium transition-colors touch-manipulation py-2 ${
-                    isActive(item.href)
-                      ? "golf-green"
-                      : "text-slate-700 hover:text-golf-green"
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 touch-manipulation ${
+                    item.name === "Start Free Trial"
+                      ? "bg-golf-green text-white hover:bg-golf-hover shadow-md"
+                      : isActive(item.href)
+                      ? "golf-green bg-slate-100"
+                      : "text-slate-700 hover:text-golf-green hover:bg-slate-100"
                   }`}
                 >
                   {item.name}
@@ -54,31 +64,41 @@ export default function Layout({ children }: LayoutProps) {
               ))}
             </div>
 
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-3 touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6 text-slate-700" />
-              ) : (
-                <Menu className="h-6 w-6 text-slate-700" />
-              )}
-            </button>
+            {/* Mobile CTA + Menu */}
+            <div className="flex items-center space-x-2 lg:hidden">
+              <Link href="/demo" className="hidden sm:block">
+                <button className="bg-golf-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-golf-hover transition-colors touch-manipulation">
+                  Free Trial
+                </button>
+              </Link>
+              
+              <button
+                className="p-2 rounded-lg hover:bg-slate-100 touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6 text-slate-700" />
+                ) : (
+                  <Menu className="h-6 w-6 text-slate-700" />
+                )}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
           {isMobileMenuOpen && (
-            <div className="md:hidden border-t border-slate-200 bg-white shadow-lg">
-              <div className="py-2 space-y-1">
+            <div className="lg:hidden border-t border-slate-200 bg-white shadow-lg">
+              <div className="py-3 space-y-2 px-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`block px-4 py-4 font-medium transition-colors touch-manipulation min-h-[48px] flex items-center ${
-                      isActive(item.href)
-                        ? "golf-green bg-slate-50 border-r-4 border-golf-green"
+                    className={`block px-4 py-3 rounded-lg font-medium transition-all touch-manipulation min-h-[48px] flex items-center ${
+                      item.name === "Start Free Trial"
+                        ? "bg-golf-green text-white hover:bg-golf-hover shadow-md"
+                        : isActive(item.href)
+                        ? "golf-green bg-slate-100 border-l-4 border-golf-green"
                         : "text-slate-700 hover:text-golf-green hover:bg-slate-50 active:bg-slate-100"
                     }`}
                     onClick={() => setIsMobileMenuOpen(false)}
