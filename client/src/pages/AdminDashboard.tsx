@@ -45,7 +45,7 @@ interface SiteContent {
 function AdminDashboardContent() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const { user, logout, getAuthHeaders } = useAdmin();
+  const { user, logout, getAuthHeaders, isAuthenticated } = useAdmin();
   const [selectedContent, setSelectedContent] = useState<SiteContent | null>(null);
   const [activeTab, setActiveTab] = useState('home');
 
@@ -56,15 +56,17 @@ function AdminDashboardContent() {
     },
   });
 
-  // Fetch all content
+  // Fetch all content - only when authenticated
   const { data: allContent, isLoading } = useQuery({
     queryKey: ['/api/admin/content'],
     queryFn: async () => {
+      console.log('Fetching content with auth headers:', getAuthHeaders());
       const response = await apiRequest('GET', '/api/admin/content', undefined, {
         headers: getAuthHeaders(),
       });
       return response as SiteContent[];
     },
+    enabled: isAuthenticated, // Only run when authenticated
   });
 
   // Update content mutation

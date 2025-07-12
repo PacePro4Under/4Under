@@ -21,6 +21,12 @@ export function useAdmin() {
   });
 
   useEffect(() => {
+    // Only initialize if not already authenticated
+    if (state.isAuthenticated) {
+      console.log('Admin already authenticated, skipping initialization');
+      return;
+    }
+    
     // Check for existing token in localStorage
     const savedToken = localStorage.getItem('admin_token');
     const savedUser = localStorage.getItem('admin_user');
@@ -47,7 +53,7 @@ export function useAdmin() {
     } else {
       setState(prev => ({ ...prev, isLoading: false }));
     }
-  }, []);
+  }, []); // Keep empty dependency array, but add auth check
 
   const login = async (email: string, password: string): Promise<{ success: boolean; message?: string }> => {
     try {
@@ -56,10 +62,13 @@ export function useAdmin() {
       if (response.success) {
         const { token, user } = response;
         
-        // Save to localStorage
+        console.log('Login successful, setting token:', token);
+        
+        // Save to localStorage first
         localStorage.setItem('admin_token', token);
         localStorage.setItem('admin_user', JSON.stringify(user));
         
+        // Then update state
         setState({
           user,
           token,
@@ -67,11 +76,13 @@ export function useAdmin() {
           isLoading: false,
         });
         
+        console.log('Login state updated');
         return { success: true };
       } else {
         return { success: false, message: response.message };
       }
     } catch (error: any) {
+      console.error('Login error:', error);
       return { 
         success: false, 
         message: error.message || 'Login failed' 
