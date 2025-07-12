@@ -42,36 +42,12 @@ interface SiteContent {
   updatedAt: string;
 }
 
-export default function AdminDashboard() {
+function AdminDashboardContent() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const { user, logout, getAuthHeaders, isAuthenticated, isLoading: authLoading } = useAdmin();
+  const { user, logout, getAuthHeaders } = useAdmin();
   const [selectedContent, setSelectedContent] = useState<SiteContent | null>(null);
   const [activeTab, setActiveTab] = useState('home');
-
-  // Show loading while authentication is being checked
-  if (authLoading) {
-    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="text-slate-600">Loading admin panel...</div>
-    </div>;
-  }
-
-  // Show login prompt if not authenticated
-  if (!isAuthenticated) {
-    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="text-center">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">Access Denied</h2>
-        <p className="text-slate-600 mb-6">You need to be logged in to access the admin panel.</p>
-        <button 
-          onClick={() => setLocation('/admin/login')}
-          className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700"
-        >
-          Go to Login
-        </button>
-      </div>
-    </div>;
-  }
-
 
   const form = useForm<ContentUpdateData>({
     resolver: zodResolver(contentUpdateSchema),
@@ -89,7 +65,6 @@ export default function AdminDashboard() {
       });
       return response as SiteContent[];
     },
-    enabled: isAuthenticated,
   });
 
   // Update content mutation
@@ -141,16 +116,12 @@ export default function AdminDashboard() {
     }, {} as Record<string, SiteContent[]>);
   };
 
-  if (!isAuthenticated) {
-    return null; // Will redirect
-  }
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-golf-green mx-auto mb-4"></div>
-          <p className="text-slate-600">Loading admin panel...</p>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+          <p className="text-slate-600">Loading content...</p>
         </div>
       </div>
     );
@@ -341,4 +312,38 @@ export default function AdminDashboard() {
       </div>
     </div>
   );
+}
+
+export default function AdminDashboard() {
+  const { isAuthenticated, isLoading: authLoading } = useAdmin();
+  const [, setLocation] = useLocation();
+
+  // Show loading while authentication is being checked
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="text-slate-600">Loading admin panel...</div>
+      </div>
+    );
+  }
+
+  // Show login prompt if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Access Denied</h2>
+          <p className="text-slate-600 mb-6">You need to be logged in to access the admin panel.</p>
+          <button 
+            onClick={() => setLocation('/admin/login')}
+            className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700"
+          >
+            Go to Login
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return <AdminDashboardContent />;
 }
