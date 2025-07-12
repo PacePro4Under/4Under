@@ -45,16 +45,33 @@ interface SiteContent {
 export default function AdminDashboard() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const { user, logout, getAuthHeaders, isAuthenticated } = useAdmin();
+  const { user, logout, getAuthHeaders, isAuthenticated, isLoading: authLoading } = useAdmin();
   const [selectedContent, setSelectedContent] = useState<SiteContent | null>(null);
   const [activeTab, setActiveTab] = useState('home');
 
-  // Redirect if not authenticated
-  useEffect(() => {
-    if (!isAuthenticated) {
-      setLocation('/admin/login');
-    }
-  }, [isAuthenticated, setLocation]);
+  // Show loading while authentication is being checked
+  if (authLoading) {
+    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="text-slate-600">Loading admin panel...</div>
+    </div>;
+  }
+
+  // Show login prompt if not authenticated
+  if (!isAuthenticated) {
+    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-slate-900 mb-4">Access Denied</h2>
+        <p className="text-slate-600 mb-6">You need to be logged in to access the admin panel.</p>
+        <button 
+          onClick={() => setLocation('/admin/login')}
+          className="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700"
+        >
+          Go to Login
+        </button>
+      </div>
+    </div>;
+  }
+
 
   const form = useForm<ContentUpdateData>({
     resolver: zodResolver(contentUpdateSchema),

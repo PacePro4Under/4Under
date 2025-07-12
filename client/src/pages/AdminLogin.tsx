@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -28,8 +28,10 @@ type LoginFormData = z.infer<typeof loginSchema>;
 export default function AdminLogin() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
-  const { login } = useAdmin();
+  const { login, isAuthenticated, isLoading: authLoading } = useAdmin();
   const [isLoading, setIsLoading] = useState(false);
+
+
 
   const form = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
@@ -38,6 +40,13 @@ export default function AdminLogin() {
       password: '',
     },
   });
+
+  // Show loading while checking authentication
+  if (authLoading) {
+    return <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="text-slate-600">Loading...</div>
+    </div>;
+  }
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
