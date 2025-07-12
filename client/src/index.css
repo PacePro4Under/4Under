@@ -106,3 +106,57 @@ body {
   font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
   letter-spacing: 2px;
 }
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Prevent zoom on input focus */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+  
+  /* Better touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent text selection on touch */
+  .touch-manipulation {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Allow text selection for content areas */
+  .touch-manipulation input,
+  .touch-manipulation textarea,
+  .touch-manipulation p,
+  .touch-manipulation span,
+  .touch-manipulation h1,
+  .touch-manipulation h2,
+  .touch-manipulation h3 {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better focus states for mobile */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid var(--golf-green);
+    outline-offset: 2px;
+  }
+}

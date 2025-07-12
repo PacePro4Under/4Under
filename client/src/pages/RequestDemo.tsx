@@ -78,33 +78,33 @@ export default function RequestDemo() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
+      <section className="bg-white py-12 sm:py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
             {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_title', 'Start your free 2-week trial')}
           </h1>
-          <p className="text-xl text-slate-700 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
             {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_subtitle', 'Includes full access + a personal onboarding session.')}
           </p>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="bg-white p-8 md:p-12 rounded-lg shadow-sm">
+      <section className="bg-slate-50 py-12 sm:py-16">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <div className="bg-white p-6 sm:p-8 md:p-12 rounded-lg shadow-sm">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">Name</FormLabel>
+                      <FormLabel className="text-base sm:text-lg font-medium">Name</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="Enter your full name" 
-                          className="py-3 text-lg"
+                          className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
                           {...field} 
                         />
                       </FormControl>
@@ -118,11 +118,11 @@ export default function RequestDemo() {
                   name="course"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">Course</FormLabel>
+                      <FormLabel className="text-base sm:text-lg font-medium">Course</FormLabel>
                       <FormControl>
                         <Input 
                           placeholder="Enter your course or facility name" 
-                          className="py-3 text-lg"
+                          className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
                           {...field} 
                         />
                       </FormControl>
@@ -136,10 +136,10 @@ export default function RequestDemo() {
                   name="role"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">Role</FormLabel>
+                      <FormLabel className="text-base sm:text-lg font-medium">Role</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger className="py-3 text-lg">
+                          <SelectTrigger className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation">
                             <SelectValue placeholder="Select your role" />
                           </SelectTrigger>
                         </FormControl>

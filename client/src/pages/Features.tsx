@@ -49,20 +49,20 @@ export default function Features() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
+      <section className="bg-white py-12 sm:py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
             What 4Under Does — In Plain Terms
           </h1>
-          <div className="text-lg text-slate-700 max-w-3xl mx-auto space-y-6">
+          <div className="text-base sm:text-lg text-slate-700 max-w-3xl mx-auto space-y-4 sm:space-y-6">
             <p>You know the drill:</p>
-            <ul className="text-left list-disc list-inside space-y-2 text-slate-600">
+            <ul className="text-left list-disc list-inside space-y-2 text-slate-600 leading-relaxed">
               <li>The tee sheet's packed.</li>
               <li>Golfers are calling the shop about slow play.</li>
               <li>Your marshal has a radio, but no proof.</li>
               <li>You're relying on gut, memory, and guesswork.</li>
             </ul>
-            <p className="font-semibold text-slate-900">
+            <p className="font-semibold text-slate-900 leading-relaxed">
               4Under changes that. It gives your team real-time visibility, structure, and reporting to manage pace of play with confidence — and ditch the pen and paper once and for all.
             </p>
           </div>
@@ -70,9 +70,9 @@ export default function Features() {
       </section>
 
       {/* Core Tools Section */}
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Core Tools</h2>
+      <section className="bg-slate-50 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-900 mb-8 sm:mb-12 text-center">Core Tools</h2>
           <div className="space-y-8">
             {coreTools.map((tool, index) => (
               <div key={index} className="bg-white p-8 rounded-lg shadow-sm">

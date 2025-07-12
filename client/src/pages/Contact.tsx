@@ -78,25 +78,25 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8">
+      <section className="bg-white py-12 sm:py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
             {isLoading ? 'Loading...' : getContentValue(content, 'contact_page_title', 'Have a question? Want to talk through your course\'s pace challenges?')}
           </h1>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="bg-slate-50 py-16">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <div className="bg-white p-12 rounded-lg shadow-sm">
-            <div className="w-20 h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-8">
-              <Mail className="golf-green h-10 w-10" />
+      <section className="bg-slate-50 py-12 sm:py-16">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+          <div className="bg-white p-8 sm:p-12 rounded-lg shadow-sm">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8">
+              <Mail className="golf-green h-8 w-8 sm:h-10 sm:w-10" />
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 sm:mb-6 break-all">
               cameron.cox.golf@gmail.com
             </h2>
-            <p className="text-lg text-slate-700 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
               You'll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
             </p>
           </div>
