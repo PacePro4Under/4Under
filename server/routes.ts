@@ -19,19 +19,25 @@ function generateSessionToken(): string {
 // Middleware to check admin authentication
 function requireAdminAuth(req: any, res: any, next: any) {
   const authHeader = req.headers.authorization;
+  console.log('Auth check - Headers:', { authorization: authHeader });
+  
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    console.log('Auth failed - No valid authorization header');
     return res.status(401).json({ success: false, message: 'Unauthorized' });
   }
 
   const token = authHeader.substring(7);
   const session = adminSessions.get(token);
+  console.log('Auth check - Token:', token, 'Session found:', !!session, 'Total sessions:', adminSessions.size);
   
   if (!session || session.expires < new Date()) {
     if (session) adminSessions.delete(token);
+    console.log('Auth failed - Session not found or expired');
     return res.status(401).json({ success: false, message: 'Session expired' });
   }
 
   req.adminUser = { email: session.email };
+  console.log('Auth success - User:', session.email);
   next();
 }
 
@@ -125,6 +131,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const expires = new Date(Date.now() + 24 * 60 * 60 * 1000);
       
       adminSessions.set(token, { email: adminUser.email, expires });
+      console.log('Login success - Generated token:', token, 'Total sessions:', adminSessions.size);
 
       res.json({ 
         success: true, 
