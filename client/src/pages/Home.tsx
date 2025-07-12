@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useContentByPage, getContentValue } from "@/hooks/useContent";
+import { Clock, ShieldCheck, BarChart3, Smartphone, WifiOff, User } from "lucide-react";
 
 export default function Home() {
   const { content, isLoading } = useContentByPage('home');
@@ -38,31 +39,49 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <Clock className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_1', 'Reduce average round times by 15+ minutes')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <ShieldCheck className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_2', 'Eliminate slow play complaints and refund requests')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <BarChart3 className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_3', 'Built-in tools for tournaments, rentals, and analytics')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <Smartphone className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_4', 'Works on any phone, tablet, or desktop')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <WifiOff className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_5', 'No downloads, no GPS, no tech headaches')}
               </h3>
             </div>
             <div className="bg-white p-8 rounded-lg">
+              <div className="flex justify-center mb-4">
+                <User className="h-12 w-12 text-golf-green" />
+              </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">
                 {isLoading ? 'Loading...' : getContentValue(content, 'home_benefit_6', 'Built by a Head Pro — not a tech company')}
               </h3>
