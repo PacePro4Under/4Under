@@ -1,0 +1,55 @@
+Please add a new page to my website called “Use Cases.”
+
+This page should match the styling and structure of the other pages on my site. It must be mobile-friendly and easy to scroll, with clean visual sectioning — no bullet dumps or clutter. Use subtle icons or styled headings if you want, but do not include any emojis or browser-default visuals.
+
+Use the exact copy below, word-for-word. Do not alter the tone or wording. It is written from a golf operator’s perspective, speaking directly to other operators. The tone is professional, clear, and proven.
+
+Each section below should be styled as its own distinct block or panel:
+
+---
+
+**Public Courses**
+
+Optimize every round — even from first-time visitors.
+
+- Track real-time pace and actual round lengths — no GPS needed.  
+- Reduce call-ins, refund demands, and bad reviews.  
+- Give marshals live data to defuse tense pace-of-play conversations.  
+- See which tee times or time windows run long and adjust scheduling accordingly.
+
+---
+
+**Private & Member Clubs**
+
+Set the tone for your club culture.
+
+- Identify members or groups who consistently fall behind.  
+- Use data to support pace policies and maintain fairness.  
+- Help starters and marshals deliver a consistent first-tee experience.  
+- Reinforce pace expectations without confrontation.
+
+---
+
+**Tournaments & Events**
+
+No more guessing who’s behind.
+
+- Shotgun format support lets you see every group’s location and pace.  
+- Know when a flight is falling behind — and why.  
+- Use checkpoint logs to issue timely warnings with credibility.  
+- Export post-event pace reports to sponsors, organizers, or players.
+
+---
+
+**For Every Course**
+
+You don’t need GPS, a tablet budget, or a data analyst.
+
+- 4Under was built by golf pros for real-world operations.  
+- It works from a phone, tablet, or desktop — and empowers any staff member, young or old.  
+- Whether your goal is revenue, reviews, reputation, or all three — pace is central to success.  
+- And now it’s measurable, trackable, and fixable.
+
+---
+
+Please add this page to the main site navigation menu as “Use Cases.” Ensure the layout is responsive and legible on both mobile and desktop. Keep styling consistent with the rest of the site.

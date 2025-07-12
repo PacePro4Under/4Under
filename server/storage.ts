@@ -420,6 +420,162 @@ export class MemStorage implements IStorage {
         updatedAt: new Date()
       },
       
+      // ========== USE CASES PAGE CONTENT ==========
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_hero_title",
+        value: "Use Cases",
+        contentType: "text",
+        page: "usecases",
+        section: "hero",
+        label: "Use Cases Page Title",
+        description: "Main title on the use cases page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_hero_subtitle",
+        value: "Real solutions for real golf operations",
+        contentType: "text",
+        page: "usecases",
+        section: "hero",
+        label: "Use Cases Page Subtitle",
+        description: "Subtitle on the use cases page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_hero_description",
+        value: "See how 4Under transforms pace management across every type of golf operation.",
+        contentType: "text",
+        page: "usecases",
+        section: "hero",
+        label: "Use Cases Hero Description",
+        description: "Description text in the hero section",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_public_title",
+        value: "Public Courses",
+        contentType: "text",
+        page: "usecases",
+        section: "public",
+        label: "Public Courses Title",
+        description: "Public courses section title",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_public_subtitle",
+        value: "Optimize every round — even from first-time visitors.",
+        contentType: "text",
+        page: "usecases",
+        section: "public",
+        label: "Public Courses Subtitle",
+        description: "Public courses section subtitle",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_private_title",
+        value: "Private & Member Clubs",
+        contentType: "text",
+        page: "usecases",
+        section: "private",
+        label: "Private Clubs Title",
+        description: "Private clubs section title",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_private_subtitle",
+        value: "Set the tone for your club culture.",
+        contentType: "text",
+        page: "usecases",
+        section: "private",
+        label: "Private Clubs Subtitle",
+        description: "Private clubs section subtitle",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_tournaments_title",
+        value: "Tournaments & Events",
+        contentType: "text",
+        page: "usecases",
+        section: "tournaments",
+        label: "Tournaments Title",
+        description: "Tournaments section title",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_tournaments_subtitle",
+        value: "No more guessing who's behind.",
+        contentType: "text",
+        page: "usecases",
+        section: "tournaments",
+        label: "Tournaments Subtitle",
+        description: "Tournaments section subtitle",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_every_title",
+        value: "For Every Course",
+        contentType: "text",
+        page: "usecases",
+        section: "every",
+        label: "For Every Course Title",
+        description: "For every course section title",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_every_subtitle",
+        value: "You don't need GPS, a tablet budget, or a data analyst.",
+        contentType: "text",
+        page: "usecases",
+        section: "every",
+        label: "For Every Course Subtitle",
+        description: "For every course section subtitle",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_cta_title",
+        value: "Ready to transform your operations?",
+        contentType: "text",
+        page: "usecases",
+        section: "cta",
+        label: "Use Cases CTA Title",
+        description: "Call to action title on use cases page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_cta_subtitle",
+        value: "See how 4Under works for your type of operation with a free trial.",
+        contentType: "text",
+        page: "usecases",
+        section: "cta",
+        label: "Use Cases CTA Subtitle",
+        description: "Call to action subtitle on use cases page",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "usecases_cta_button",
+        value: "Start Your Free Trial",
+        contentType: "button",
+        page: "usecases",
+        section: "cta",
+        label: "Use Cases CTA Button",
+        description: "Call to action button on use cases page",
+        updatedAt: new Date()
+      },
+      
       // ========== NAVIGATION CONTENT ==========
       {
         id: this.currentSiteContentId++,
@@ -441,6 +597,17 @@ export class MemStorage implements IStorage {
         section: "main",
         label: "Features Navigation Link",
         description: "Features navigation link text",
+        updatedAt: new Date()
+      },
+      {
+        id: this.currentSiteContentId++,
+        key: "nav_usecases_link",
+        value: "Use Cases",
+        contentType: "button",
+        page: "navigation",
+        section: "main",
+        label: "Use Cases Navigation Link",
+        description: "Use Cases navigation link text",
         updatedAt: new Date()
       },
       {

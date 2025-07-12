@@ -172,7 +172,7 @@ function AdminDashboardContent() {
               </CardHeader>
               <CardContent>
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
-                  <TabsList className="grid w-full grid-cols-4">
+                  <TabsList className="grid w-full grid-cols-5">
                     <TabsTrigger value="home" className="flex items-center space-x-1">
                       <span>Home</span>
                     </TabsTrigger>
@@ -184,6 +184,9 @@ function AdminDashboardContent() {
                     </TabsTrigger>
                     <TabsTrigger value="features" className="flex items-center space-x-1">
                       <span>Features</span>
+                    </TabsTrigger>
+                    <TabsTrigger value="usecases" className="flex items-center space-x-1">
+                      <span>Use Cases</span>
                     </TabsTrigger>
                   </TabsList>
 
