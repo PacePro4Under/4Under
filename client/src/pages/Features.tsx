@@ -8,6 +8,7 @@ import tvMode1 from "@/assets/tv-mode-1.jpeg";
 import tvMode2 from "@/assets/tv-mode-2.jpeg";
 import shotgun1 from "@/assets/shotgun-1.jpeg";
 import shotgun2 from "@/assets/shotgun-2.jpeg";
+import rentalSetTracking from "@/assets/rental-set-tracking.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -143,6 +144,14 @@ export default function Features() {
                     <img 
                       src={shotgun2}
                       alt="Split tee tracking for tournament formats with hole-by-hole monitoring"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "Rental Set Tracking" ? (
+                  <div className="mt-6">
+                    <img 
+                      src={rentalSetTracking}
+                      alt="Rental Set Tracking interface for assigning and monitoring rental clubs"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
