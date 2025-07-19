@@ -6,6 +6,8 @@ import manualCheckpoints2 from "@/assets/manual-checkpoints-2.jpeg";
 import interventionModeScreenshot from "@/assets/intervention-mode.jpeg";
 import tvMode1 from "@/assets/tv-mode-1.jpeg";
 import tvMode2 from "@/assets/tv-mode-2.jpeg";
+import shotgun1 from "@/assets/shotgun-1.jpeg";
+import shotgun2 from "@/assets/shotgun-2.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -128,6 +130,19 @@ export default function Features() {
                     <img 
                       src={tvMode2}
                       alt="TV Display Mode detailed view for marshal tent monitoring"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "Shotgun + Split Tee Support" ? (
+                  <div className="mt-6 space-y-4">
+                    <img 
+                      src={shotgun1}
+                      alt="Shotgun start configuration with A/B wave support"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                    <img 
+                      src={shotgun2}
+                      alt="Split tee tracking for tournament formats with hole-by-hole monitoring"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
