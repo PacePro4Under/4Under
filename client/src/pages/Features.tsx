@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.jpeg";
 import manualCheckpoints1 from "@/assets/manual-checkpoints-1.jpeg";
 import manualCheckpoints2 from "@/assets/manual-checkpoints-2.jpeg";
+import interventionModeScreenshot from "@/assets/intervention-mode.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -13,6 +14,10 @@ export default function Features() {
     {
       title: "Manual Checkpoints",
       description: "Staff can track where any group is (tee, fairway, green) and log checkpoint times."
+    },
+    {
+      title: "Intervention Mode",
+      description: "Pinpoint the exact location that a group needs to be in 20 minutes to get back on pace. Takes the guesswork out of pace management."
     },
     {
       title: "Real-Time Dashboard",
@@ -100,6 +105,14 @@ export default function Features() {
                     <img 
                       src={manualCheckpoints2}
                       alt="Manual Checkpoints detailed view with checkpoint timing options"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "Intervention Mode" ? (
+                  <div className="mt-6">
+                    <img 
+                      src={interventionModeScreenshot}
+                      alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
