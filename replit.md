@@ -10,6 +10,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+**July 19, 2025 - Admin Demo Requests Management:**
+- Added "Demo Requests" tab to admin dashboard
+- Implemented professional table view for all free trial submissions
+- Added clickable email and phone links for easy contact
+- Included submission timestamps and formatted comments
+- Enhanced admin panel with dual-tab navigation (Content + Demo Requests)
+- Integrated with existing authentication and data fetching system
+
 **January 12, 2025 - Use Cases Page Added:**
 - Created comprehensive Use Cases page with professional golf industry copy
 - Added four distinct sections: Public Courses, Private & Member Clubs, Tournaments & Events, For Every Course
