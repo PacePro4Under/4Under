@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
+import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -78,10 +79,20 @@ export default function Features() {
               <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{tool.title}</h3>
                 <p className="text-lg text-slate-700">{tool.description}</p>
-                {/* Placeholder for future screenshot */}
-                <div className="mt-6 bg-slate-100 h-32 rounded-lg flex items-center justify-center">
-                  <span className="text-slate-400 text-sm">Screenshot placeholder</span>
-                </div>
+                {/* Screenshot for Starter Check-In, placeholder for others */}
+                {tool.title === "Starter Check-In" ? (
+                  <div className="mt-6">
+                    <img 
+                      src={starterCheckinScreenshot}
+                      alt="Starter Check-In interface showing how to log names, carts, and pace talks"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : (
+                  <div className="mt-6 bg-slate-100 h-32 rounded-lg flex items-center justify-center">
+                    <span className="text-slate-400 text-sm">Screenshot placeholder</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
