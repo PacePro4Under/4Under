@@ -4,6 +4,8 @@ import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.jpeg";
 import manualCheckpoints1 from "@/assets/manual-checkpoints-1.jpeg";
 import manualCheckpoints2 from "@/assets/manual-checkpoints-2.jpeg";
 import interventionModeScreenshot from "@/assets/intervention-mode.jpeg";
+import tvMode1 from "@/assets/tv-mode-1.jpeg";
+import tvMode2 from "@/assets/tv-mode-2.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -113,6 +115,19 @@ export default function Features() {
                     <img 
                       src={interventionModeScreenshot}
                       alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "TV Display Mode" ? (
+                  <div className="mt-6 space-y-4">
+                    <img 
+                      src={tvMode1}
+                      alt="TV Display Mode showing read-only live pace board for pro shops"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                    <img 
+                      src={tvMode2}
+                      alt="TV Display Mode detailed view for marshal tent monitoring"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
