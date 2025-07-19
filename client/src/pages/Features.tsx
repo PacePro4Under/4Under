@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.jpeg";
+import manualCheckpoints1 from "@/assets/manual-checkpoints-1.jpeg";
+import manualCheckpoints2 from "@/assets/manual-checkpoints-2.jpeg";
 
 export default function Features() {
   const coreTools = [
@@ -79,12 +81,25 @@ export default function Features() {
               <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{tool.title}</h3>
                 <p className="text-lg text-slate-700">{tool.description}</p>
-                {/* Screenshot for Starter Check-In, placeholder for others */}
+                {/* Screenshots for specific tools, placeholder for others */}
                 {tool.title === "Starter Check-In" ? (
                   <div className="mt-6">
                     <img 
                       src={starterCheckinScreenshot}
                       alt="Starter Check-In interface showing how to log names, carts, and pace talks"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "Manual Checkpoints" ? (
+                  <div className="mt-6 space-y-4">
+                    <img 
+                      src={manualCheckpoints1}
+                      alt="Manual Checkpoints interface showing staff tracking group locations"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                    <img 
+                      src={manualCheckpoints2}
+                      alt="Manual Checkpoints detailed view with checkpoint timing options"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
