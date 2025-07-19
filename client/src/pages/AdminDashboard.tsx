@@ -19,10 +19,18 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Separator } from '@/components/ui/separator';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
 import { useToast } from '@/hooks/use-toast';
 import { useAdmin } from '@/hooks/useAdmin';
 import { apiRequest, queryClient } from '@/lib/queryClient';
-import { LogOut, Save, Globe, FileText, MessageSquare, HelpCircle } from 'lucide-react';
+import { LogOut, Save, Globe, FileText, MessageSquare, HelpCircle, Users, Mail, Phone, Calendar } from 'lucide-react';
 
 const contentUpdateSchema = z.object({
   value: z.string().min(1, 'Content cannot be empty'),
@@ -42,12 +50,24 @@ interface SiteContent {
   updatedAt: string;
 }
 
+interface DemoRequest {
+  id: number;
+  name: string;
+  course: string;
+  role: string;
+  email: string;
+  phone: string;
+  comments: string | null;
+  createdAt: string;
+}
+
 function AdminDashboardContent() {
   const [, setLocation] = useLocation();
   const { toast } = useToast();
   const { user, logout, getAuthHeaders, isAuthenticated } = useAdmin();
   const [selectedContent, setSelectedContent] = useState<SiteContent | null>(null);
   const [activeTab, setActiveTab] = useState('home');
+  const [activeMainTab, setActiveMainTab] = useState('content');
 
   const form = useForm<ContentUpdateData>({
     resolver: zodResolver(contentUpdateSchema),
@@ -67,6 +87,18 @@ function AdminDashboardContent() {
       return response as SiteContent[];
     },
     enabled: isAuthenticated, // Only run when authenticated
+  });
+
+  // Fetch all demo requests - only when authenticated and on demo requests tab
+  const { data: demoRequests, isLoading: demoRequestsLoading } = useQuery({
+    queryKey: ['/api/admin/demo-requests'],
+    queryFn: async () => {
+      const response = await apiRequest('GET', '/api/admin/demo-requests', undefined, {
+        headers: getAuthHeaders(),
+      });
+      return response as DemoRequest[];
+    },
+    enabled: isAuthenticated && activeMainTab === 'demo-requests',
   });
 
   // Update content mutation
@@ -160,16 +192,31 @@ function AdminDashboardContent() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Content List */}
-          <div className="lg:col-span-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Globe className="h-5 w-5" />
-                  <span>Website Content</span>
-                </CardTitle>
-              </CardHeader>
+        {/* Main Navigation Tabs */}
+        <Tabs value={activeMainTab} onValueChange={setActiveMainTab} className="space-y-6">
+          <TabsList className="grid w-full grid-cols-2 max-w-md">
+            <TabsTrigger value="content" className="flex items-center space-x-2">
+              <Globe className="h-4 w-4" />
+              <span>Website Content</span>
+            </TabsTrigger>
+            <TabsTrigger value="demo-requests" className="flex items-center space-x-2">
+              <Users className="h-4 w-4" />
+              <span>Demo Requests</span>
+            </TabsTrigger>
+          </TabsList>
+
+          {/* Content Management Tab */}
+          <TabsContent value="content">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Content List */}
+              <div className="lg:col-span-2">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center space-x-2">
+                      <Globe className="h-5 w-5" />
+                      <span>Website Content</span>
+                    </CardTitle>
+                  </CardHeader>
               <CardContent>
                 <Tabs value={activeTab} onValueChange={setActiveTab}>
                   <TabsList className="grid w-full grid-cols-5">
@@ -314,7 +361,98 @@ function AdminDashboardContent() {
             </Card>
           </div>
         </div>
-      </div>
+      </TabsContent>
+
+      {/* Demo Requests Tab */}
+      <TabsContent value="demo-requests">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <Users className="h-5 w-5" />
+              <span>Free Trial Requests</span>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {demoRequestsLoading ? (
+              <div className="flex items-center justify-center py-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+                <p className="text-slate-600">Loading demo requests...</p>
+              </div>
+            ) : demoRequests && demoRequests.length > 0 ? (
+              <div className="rounded-md border">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead>Name</TableHead>
+                      <TableHead>Course/Facility</TableHead>
+                      <TableHead>Role</TableHead>
+                      <TableHead>Email</TableHead>
+                      <TableHead>Phone</TableHead>
+                      <TableHead>Comments</TableHead>
+                      <TableHead>Submitted</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {demoRequests.map((request) => (
+                      <TableRow key={request.id}>
+                        <TableCell className="font-medium">{request.name}</TableCell>
+                        <TableCell>{request.course}</TableCell>
+                        <TableCell>{request.role}</TableCell>
+                        <TableCell>
+                          <a 
+                            href={`mailto:${request.email}`} 
+                            className="text-emerald-600 hover:text-emerald-700 flex items-center space-x-1"
+                          >
+                            <Mail className="h-4 w-4" />
+                            <span>{request.email}</span>
+                          </a>
+                        </TableCell>
+                        <TableCell>
+                          <a 
+                            href={`tel:${request.phone}`} 
+                            className="text-emerald-600 hover:text-emerald-700 flex items-center space-x-1"
+                          >
+                            <Phone className="h-4 w-4" />
+                            <span>{request.phone}</span>
+                          </a>
+                        </TableCell>
+                        <TableCell className="max-w-xs">
+                          {request.comments ? (
+                            <span className="block overflow-hidden text-ellipsis" title={request.comments}>
+                              {request.comments.length > 50 ? `${request.comments.substring(0, 50)}...` : request.comments}
+                            </span>
+                          ) : (
+                            <span className="text-slate-400 italic">No comments</span>
+                          )}
+                        </TableCell>
+                        <TableCell className="text-slate-600">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="h-4 w-4" />
+                            <span className="text-sm">
+                              {new Date(request.createdAt).toLocaleDateString()}<br/>
+                              {new Date(request.createdAt).toLocaleTimeString()}
+                            </span>
+                          </div>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <Users className="h-16 w-16 text-slate-400 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-slate-900 mb-2">No demo requests yet</h3>
+                <p className="text-slate-600">
+                  Free trial requests will appear here when customers submit the form.
+                </p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </TabsContent>
+    </Tabs>
+    </div>
     </div>
   );
 }
