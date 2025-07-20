@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot-hq.jpeg";
-import manualCheckpoints1 from "@/assets/manual-checkpoints-1-hq.jpeg";
-import manualCheckpoints2 from "@/assets/manual-checkpoints-2-hq.jpeg";
-import interventionModeScreenshot from "@/assets/intervention-mode-hq.jpeg";
+import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.png";
+import manualCheckpoints1 from "@/assets/manual-checkpoints-1.png";
+import manualCheckpoints2 from "@/assets/manual-checkpoints-2.png";
+import interventionModeScreenshot from "@/assets/intervention-mode.png";
 import tvModeScreenshot from "@/assets/tv-mode-1.png";
 import shotgunScreenshot from "@/assets/shotgun-1.png";
 import rentalSetTracking from "@/assets/rental-set-tracking.png";
@@ -99,11 +99,11 @@ export default function Features() {
                       alt="Starter Check-In interface showing how to log names, carts, and pace talks"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'auto', 
+                        imageRendering: 'crisp-edges', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
+                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
                         backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
+                        transform: 'translateZ(0) scale(1.001)'
                       } as React.CSSProperties}
                     />
                   </div>
@@ -114,11 +114,11 @@ export default function Features() {
                       alt="Manual Checkpoints interface showing staff tracking group locations"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'auto', 
+                        imageRendering: 'crisp-edges', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
+                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
                         backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
+                        transform: 'translateZ(0) scale(1.001)'
                       } as React.CSSProperties}
                     />
                     <img 
@@ -126,11 +126,11 @@ export default function Features() {
                       alt="Manual Checkpoints detailed view with checkpoint timing options"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'auto', 
+                        imageRendering: 'crisp-edges', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
+                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
                         backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
+                        transform: 'translateZ(0) scale(1.001)'
                       } as React.CSSProperties}
                     />
                   </div>
@@ -141,11 +141,11 @@ export default function Features() {
                       alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'auto', 
+                        imageRendering: 'crisp-edges', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
+                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
                         backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
+                        transform: 'translateZ(0) scale(1.001)'
                       } as React.CSSProperties}
                     />
                   </div>

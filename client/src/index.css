@@ -177,6 +177,9 @@ img[src$=".png"] {
   image-rendering: crisp-edges;
   backface-visibility: hidden;
   transform: translateZ(0);
+  filter: contrast(1.2) brightness(1.05) saturate(1.1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* High-quality rendering for JPEG images */
