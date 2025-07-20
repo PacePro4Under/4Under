@@ -98,6 +98,13 @@ export default function Features() {
                       src={starterCheckinScreenshot}
                       alt="Starter Check-In interface showing how to log names, carts, and pace talks"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Manual Checkpoints" ? (
@@ -106,11 +113,25 @@ export default function Features() {
                       src={manualCheckpoints1}
                       alt="Manual Checkpoints interface showing staff tracking group locations"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                     <img 
                       src={manualCheckpoints2}
                       alt="Manual Checkpoints detailed view with checkpoint timing options"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Intervention Mode" ? (
@@ -119,6 +140,13 @@ export default function Features() {
                       src={interventionModeScreenshot}
                       alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Real-Time Dashboard" ? (
@@ -127,6 +155,13 @@ export default function Features() {
                       src={dashboardScreenshot}
                       alt="Real-Time Dashboard showing live pace status with color-coded groups and intervention controls"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Shotgun + Split Tee Support" ? (
@@ -135,6 +170,13 @@ export default function Features() {
                       src={shotgunScreenshot}
                       alt="Mass Shotgun Start configuration with multiple groups starting at different holes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "TV Display Mode" ? (
@@ -143,6 +185,13 @@ export default function Features() {
                       src={tvModeScreenshot}
                       alt="TV Display Mode showing today's round times and pace statistics"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Rental Set Tracking" ? (
@@ -151,6 +200,13 @@ export default function Features() {
                       src={rentalSetTracking}
                       alt="Rental Club Sets management interface with assignment tracking and status monitoring"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : tool.title === "Admin Panel" ? (
@@ -159,6 +215,13 @@ export default function Features() {
                       src={adminPanelScreenshot}
                       alt="Admin Panel settings for pace of play configuration and status thresholds"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                      style={{ 
+                        imageRendering: 'crisp-edges', 
+                        maxWidth: '100%',
+                        filter: 'contrast(1.1) brightness(1.02)',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                     />
                   </div>
                 ) : (

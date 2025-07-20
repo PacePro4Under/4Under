@@ -160,3 +160,21 @@ body {
     outline-offset: 2px;
   }
 }
+
+/* High-quality image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  
+  /* Fallback for older browsers */
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* Specific optimizations for PNG screenshots */
+img[src$=".png"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
