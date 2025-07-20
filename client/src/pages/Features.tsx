@@ -1,14 +1,14 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.jpeg";
-import manualCheckpoints1 from "@/assets/manual-checkpoints-1.jpeg";
-import manualCheckpoints2 from "@/assets/manual-checkpoints-2.jpeg";
-import interventionModeScreenshot from "@/assets/intervention-mode.jpeg";
-import tvMode1 from "@/assets/tv-mode-1.jpeg";
-import tvMode2 from "@/assets/tv-mode-2.jpeg";
-import shotgun1 from "@/assets/shotgun-1.jpeg";
-import shotgun2 from "@/assets/shotgun-2.jpeg";
-import rentalSetTracking from "@/assets/rental-set-tracking.jpeg";
+import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.png";
+import manualCheckpoints1 from "@/assets/manual-checkpoints-1.png";
+import manualCheckpoints2 from "@/assets/manual-checkpoints-2.png";
+import interventionModeScreenshot from "@/assets/intervention-mode.png";
+import tvModeScreenshot from "@/assets/tv-mode-1.png";
+import shotgunScreenshot from "@/assets/shotgun-1.png";
+import rentalSetTracking from "@/assets/rental-set-tracking.png";
+import dashboardScreenshot from "@/assets/dashboard.png";
+import adminPanelScreenshot from "@/assets/admin-panel.png";
 
 export default function Features() {
   const coreTools = [
@@ -121,29 +121,27 @@ export default function Features() {
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
-                ) : tool.title === "TV Display Mode" ? (
-                  <div className="mt-6 space-y-4">
+                ) : tool.title === "Real-Time Dashboard" ? (
+                  <div className="mt-6">
                     <img 
-                      src={tvMode1}
-                      alt="TV Display Mode showing read-only live pace board for pro shops"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                    />
-                    <img 
-                      src={tvMode2}
-                      alt="TV Display Mode detailed view for marshal tent monitoring"
+                      src={dashboardScreenshot}
+                      alt="Real-Time Dashboard showing live pace status with color-coded groups and intervention controls"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
                 ) : tool.title === "Shotgun + Split Tee Support" ? (
-                  <div className="mt-6 space-y-4">
+                  <div className="mt-6">
                     <img 
-                      src={shotgun1}
-                      alt="Shotgun start configuration with A/B wave support"
+                      src={shotgunScreenshot}
+                      alt="Mass Shotgun Start configuration with multiple groups starting at different holes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
+                  </div>
+                ) : tool.title === "TV Display Mode" ? (
+                  <div className="mt-6">
                     <img 
-                      src={shotgun2}
-                      alt="Split tee tracking for tournament formats with hole-by-hole monitoring"
+                      src={tvModeScreenshot}
+                      alt="TV Display Mode showing today's round times and pace statistics"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
@@ -151,7 +149,15 @@ export default function Features() {
                   <div className="mt-6">
                     <img 
                       src={rentalSetTracking}
-                      alt="Rental Set Tracking interface for assigning and monitoring rental clubs"
+                      alt="Rental Club Sets management interface with assignment tracking and status monitoring"
+                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
+                    />
+                  </div>
+                ) : tool.title === "Admin Panel" ? (
+                  <div className="mt-6">
+                    <img 
+                      src={adminPanelScreenshot}
+                      alt="Admin Panel settings for pace of play configuration and status thresholds"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                     />
                   </div>
