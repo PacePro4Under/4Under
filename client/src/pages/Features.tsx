@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.png";
-import manualCheckpoints1 from "@/assets/manual-checkpoints-1.png";
-import manualCheckpoints2 from "@/assets/manual-checkpoints-2.png";
-import interventionModeScreenshot from "@/assets/intervention-mode.png";
+import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot-hq.jpeg";
+import manualCheckpoints1 from "@/assets/manual-checkpoints-1-hq.jpeg";
+import manualCheckpoints2 from "@/assets/manual-checkpoints-2-hq.jpeg";
+import interventionModeScreenshot from "@/assets/intervention-mode-hq.jpeg";
 import tvModeScreenshot from "@/assets/tv-mode-1.png";
 import shotgunScreenshot from "@/assets/shotgun-1.png";
 import rentalSetTracking from "@/assets/rental-set-tracking.png";
@@ -99,12 +99,12 @@ export default function Features() {
                       alt="Starter Check-In interface showing how to log names, carts, and pace talks"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'crisp-edges', 
+                        imageRendering: 'auto', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
+                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
                         backfaceVisibility: 'hidden',
                         transform: 'translateZ(0)'
-                      }}
+                      } as React.CSSProperties}
                     />
                   </div>
                 ) : tool.title === "Manual Checkpoints" ? (
@@ -114,24 +114,24 @@ export default function Features() {
                       alt="Manual Checkpoints interface showing staff tracking group locations"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'crisp-edges', 
+                        imageRendering: 'auto', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
+                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
                         backfaceVisibility: 'hidden',
                         transform: 'translateZ(0)'
-                      }}
+                      } as React.CSSProperties}
                     />
                     <img 
                       src={manualCheckpoints2}
                       alt="Manual Checkpoints detailed view with checkpoint timing options"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'crisp-edges', 
+                        imageRendering: 'auto', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
+                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
                         backfaceVisibility: 'hidden',
                         transform: 'translateZ(0)'
-                      }}
+                      } as React.CSSProperties}
                     />
                   </div>
                 ) : tool.title === "Intervention Mode" ? (
@@ -141,12 +141,12 @@ export default function Features() {
                       alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
                       className="w-full h-auto rounded-lg shadow-md border border-slate-200"
                       style={{ 
-                        imageRendering: 'crisp-edges', 
+                        imageRendering: 'auto', 
                         maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
+                        filter: 'contrast(1.15) brightness(1.05) saturate(1.05)',
                         backfaceVisibility: 'hidden',
                         transform: 'translateZ(0)'
-                      }}
+                      } as React.CSSProperties}
                     />
                   </div>
                 ) : tool.title === "Real-Time Dashboard" ? (
