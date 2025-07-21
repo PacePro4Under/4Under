@@ -92,16 +92,16 @@ export default function Features() {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed mb-4">{feature.description}</p>
+                </div>
                 <div className="aspect-video bg-slate-100 overflow-hidden">
                   <img 
                     src={feature.image} 
                     alt={feature.alt}
                     className="w-full h-full object-cover object-top"
                   />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{feature.description}</p>
                 </div>
               </div>
             ))}
