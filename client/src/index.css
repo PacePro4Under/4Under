@@ -24,11 +24,12 @@
   --ring: hsl(142, 76%, 36%);
   --radius: 0.5rem;
   
-  /* 4Under brand colors */
-  --golf-green: #174C3C;
-  --golf-dark: #174C3C;
-  --golf-hover: #276D57;
-  --golf-light: hsl(142, 50%, 96%);
+  /* 4Under brand colors - Navy-based professional palette */
+  --golf-green: #1a365d;
+  --golf-dark: #153e75;
+  --golf-hover: #2b77ad;
+  --golf-light: hsl(210, 50%, 96%);
+  --golf-accent: #cbd5e0;
 }
 
 .dark {
@@ -63,42 +64,117 @@
   }
 }
 
-/* 4Under brand classes */
+/* 4Under brand classes - Updated navy palette */
 .golf-green {
-  color: #174C3C;
+  color: #1a365d;
 }
 
 .bg-golf-green {
-  background-color: #174C3C;
+  background-color: #1a365d;
 }
 
 .bg-golf-dark {
-  background-color: #174C3C;
+  background-color: #153e75;
 }
 
 .bg-golf-light {
-  background-color: hsl(142, 50%, 96%);
+  background-color: hsl(210, 50%, 96%);
 }
 
 .border-golf-green {
-  border-color: #174C3C;
+  border-color: #1a365d;
 }
 
 .hover\:bg-golf-hover:hover {
-  background-color: #276D57;
+  background-color: #2b77ad;
 }
 
 .hover\:bg-golf-light:hover {
-  background-color: hsl(142, 50%, 96%);
+  background-color: hsl(210, 50%, 96%);
 }
 
 .hover\:text-golf-green:hover {
-  color: #174C3C;
+  color: #1a365d;
 }
 
-/* Typography */
+/* Enhanced button styling */
+.btn-primary {
+  background-color: #1a365d;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: #2b77ad;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Consistent container widths */
+.container-standard {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-standard {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-standard {
+    padding: 0 2rem;
+  }
+}
+
+/* Typography - Clean, Professional Sans-Serif */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Improved typography hierarchy */
+h1 {
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: clamp(1.25rem, 3vw, 1.875rem);
+}
+
+/* Professional spacing system */
+.section-spacing {
+  padding: 4rem 0;
+}
+
+@media (min-width: 640px) {
+  .section-spacing {
+    padding: 6rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding: 8rem 0;
+  }
 }
 
 /* Digital clock font styling */
