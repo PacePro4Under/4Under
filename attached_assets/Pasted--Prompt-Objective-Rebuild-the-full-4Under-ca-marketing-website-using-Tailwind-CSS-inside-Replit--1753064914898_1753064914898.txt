@@ -1,0 +1,171 @@
+**Prompt Objective:**
+Rebuild the full 4Under.ca marketing website using Tailwind CSS inside Replit. The site must reflect the brand’s strategic positioning as a pace-of-play operations tool built *by pros, for pros*, using a conversational yet authoritative tone, outcome-driven messaging, and sales-optimized structure.
+
+---
+
+### 🔧 Site Overview
+
+**Primary Goal:** Increase conversions via free trial form submissions
+**Tone:** Confident, knowledgeable, built-for-you
+**Platform:** Mobile-first, clean visual hierarchy, built in Replit using Tailwind
+**Core CTA:** Start Free Trial
+
+**Pages:**
+1. Home (`/`)
+2. Features (`/features`)
+3. Use Cases (`/use-cases`)
+4. FAQ (`/faq`)
+5. Start Trial (`/start`)
+6. Contact (`/contact`)
+
+---
+
+### 🏠 HOME PAGE
+
+**Hero Section:**
+Headline: `Pace of play shouldn’t be a guessing game.`
+Subheadline: `4Under gives your marshals live pace data to manage rounds with confidence — no GPS or downloads required.`
+Bullet Benefits:
+- Reduce average round times by 15+ minutes
+- Eliminate slow play complaints and refund demands
+- Empower marshals with structure, not stress
+
+**CTA Button:** Start Free Trial → `/start`
+
+---
+
+**Comparison Table**
+Title: `How Most Courses Manage Pace vs. How 4Under Does It`
+| The Old Way                   | With 4Under                              |
+|-----------------------------|-----------------------------------------|
+| Gut feel, radios, guesswork | Real-time data, tracked checkpoints      |
+| Vague warnings              | Actionable targets with Intervention Mode|
+| Paper notes, sticky pads    | Auto-logged reports + daily insights     |
+| Refund requests             | 15+ min faster average rounds            |
+| "You need to speed up"      | "Here's where you need to be in 20 min" |
+
+---
+
+**3-Step Visual Framework**
+Title: `How It Works`
+1. **Log the Start** – Track names, carts, and confirm expectations.
+2. **Monitor Pace Live** – Staff record group position: tee, fairway, or green.
+3. **Coach with Confidence** – Use Intervention Mode to show where a group needs to be.
+
+---
+
+**Why We Built It**
+Quote-style narrative:
+"I didn’t need a GPS map. I needed a tool to stop slow rounds *before* they became problems — and give my marshals real leverage in player conversations. So I built it."
+
+— *Cameron Cox, PGA Professional & Founder of 4Under*
+
+---
+
+**Outcome Snapshot:**
+- Fewer pace complaints
+- Smoother operations
+- Happier players
+- Empowered marshals
+- Tangible round time savings
+
+---
+
+### ⚙️ FEATURES PAGE
+
+**Headline:** `A Simple System That Changes Everything`
+
+**Each Feature Section:**
+- **Starter Check-In**: Confirm expectations at the first tee.
+- **Manual Checkpoints**: Log group position with a single tap.
+- **Intervention Mode**: Real-time coaching tool that sets target location.
+- **Dashboard**: See every group’s pace status live, color-coded.
+- **Shotgun & Split Tee Support**: Built for real-world formats.
+- **TV Display**: Show pace board in marshal tents or shops.
+- **PDF Reports**: Download daily summaries.
+- **Rental Tracking**: Track rental clubs and set alerts.
+- **Admin Panel**: Adjust pace rules, formats, and defaults in seconds.
+
+**Section Outro:**
+What started as a tool to track slow days became the all-in-one pace solution your course has been waiting for.
+
+---
+
+### 📋 USE CASES PAGE
+
+**Headline:** `One Tool. Multiple Use Cases.`
+
+**Public Courses:**
+- Decrease refunds & complaints
+- Spot slow tee windows
+- Empower newer marshals
+
+**Private Clubs:**
+- Back pace policies with data
+- Reinforce fairness across member groups
+- Create consistent culture
+
+**Tournaments & Shotguns:**
+- See shotgun progress hole-by-hole
+- Know which flights are behind — instantly
+- Export post-event pace recaps for sponsors
+
+**Universal Fit:**
+No GPS. No app. No install.
+Built for real-world operations by golf professionals who’ve lived the problems.
+
+---
+
+### ❓ FAQ PAGE
+
+- **Do I need GPS or hardware?** No. Browser-based. No installs.
+- **Can older staff use it?** Yes — it’s used by 70+ year old marshals.
+- **What if we already have marshals?** 4Under empowers them with data.
+- **Can it handle tournaments?** Yes. Shotgun and split-tee ready.
+- **Does it work with players?** Yes — `/pace-of-play` lets them see predicted end times.
+- **Multiple staff at once?** Of course. All real-time, all synced.
+- **Cost?** Monthly, only when used.
+- **Trial?** 2 weeks free + onboarding call.
+
+---
+
+### 📝 START PAGE
+
+**Headline:** `Start Your Free Trial`
+
+Subcopy: Get two weeks of full access — plus a 1-on-1 onboarding session.
+
+Form Fields:
+- Name
+- Course Name
+- Role
+- Email
+- Phone
+- Notes (optional)
+
+Submit to Google Sheet or webhook.
+
+---
+
+### 📞 CONTACT PAGE
+
+**Headline:** `Let’s Talk Shop`
+Subtext: Want to see how 4Under fits your course? Let’s talk golf ops.
+
+Email: cameron.cox.golf@gmail.com  
+Instagram: [@cameron.cox.golf](https://www.instagram.com/cameron.cox.golf)
+
+---
+
+### 🧱 DEVELOPMENT NOTES
+- Use Tailwind CSS
+- Prioritize mobile-first design
+- Sticky nav bar
+- Each page cleanly structured
+- Match tone to confident golf pro: professional, helpful, no tech jargon
+- Don’t show pricing or specific club examples
+- Use soft shadows, good whitespace, and readable typography
+
+---
+
+Let me know when you’re ready for HTML component files, or if you'd like this turned into a live Replit project structure next.
