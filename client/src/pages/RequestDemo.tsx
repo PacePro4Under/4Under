@@ -1,46 +1,34 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { useContentByPage, getContentValue } from "@/hooks/useContent";
+import { insertDemoRequestSchema } from "@shared/schema";
 
-const demoFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  course: z.string().min(2, "Course name must be at least 2 characters"),
-  role: z.string().min(1, "Please select your role"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+const formSchema = insertDemoRequestSchema.extend({
+  name: z.string().min(1, "Name is required"),
+  course: z.string().min(1, "Course name is required"),
+  role: z.string().min(1, "Role is required"),
+  email: z.string().email("Valid email required"),
+  phone: z.string().min(1, "Phone number is required"),
   comments: z.string().optional(),
 });
 
-type DemoFormData = z.infer<typeof demoFormSchema>;
+type FormData = z.infer<typeof formSchema>;
 
 export default function RequestDemo() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
-  const { content, isLoading } = useContentByPage('demo');
-  
-  const form = useForm<DemoFormData>({
-    resolver: zodResolver(demoFormSchema),
+  const queryClient = useQueryClient();
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       course: "",
@@ -51,18 +39,29 @@ export default function RequestDemo() {
     },
   });
 
-  const submitDemoMutation = useMutation({
-    mutationFn: async (data: DemoFormData) => {
-      return apiRequest("POST", "/api/demo-requests", data);
+  const submitMutation = useMutation({
+    mutationFn: async (data: FormData) => {
+      const response = await fetch("/api/demo-requests", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit request");
+      }
+
+      return response.json();
     },
     onSuccess: () => {
+      setIsSubmitted(true);
+      queryClient.invalidateQueries({ queryKey: ["/api/demo-requests"] });
       toast({
-        title: "Thanks for reaching out!",
-        description: "We'll be in touch shortly to schedule your free trial and onboarding call.",
+        title: "Request Submitted!",
+        description: "We'll be in touch within 24 hours to schedule your onboarding session.",
       });
-      form.reset();
     },
-    onError: (error) => {
+    onError: () => {
       toast({
         title: "Error",
         description: "There was a problem submitting your request. Please try again.",
@@ -71,144 +70,212 @@ export default function RequestDemo() {
     },
   });
 
-  const onSubmit = (data: DemoFormData) => {
-    submitDemoMutation.mutate(data);
+  const onSubmit = (data: FormData) => {
+    submitMutation.mutate(data);
   };
 
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-slate-50 py-16 sm:py-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="shadow-xl">
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-bold text-golf-green mb-4">
+                Request Submitted!
+              </CardTitle>
+              <CardDescription className="text-lg">
+                Thank you for your interest in 4Under. We'll be in touch within 24 hours to schedule your free trial and onboarding session.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <p className="text-slate-600 mb-6">
+                In the meantime, feel free to explore our features or contact us directly with any questions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  onClick={() => window.location.href = "/features"}
+                  variant="outline" 
+                  className="border-golf-green text-golf-green hover:bg-golf-green hover:text-white"
+                >
+                  Explore Features
+                </Button>
+                <Button 
+                  onClick={() => window.location.href = "/contact"}
+                  className="bg-golf-green hover:bg-golf-hover text-white"
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <section className="bg-white py-12 sm:py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
-            {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_title', 'Start your free 2-week trial')}
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed">
-            {isLoading ? 'Loading...' : getContentValue(content, 'demo_page_subtitle', 'Includes full access + a personal onboarding session.')}
-          </p>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              Start Your Free Trial
+            </h1>
+            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+              Get two weeks of full access — plus a 1-on-1 onboarding session.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="bg-slate-50 py-12 sm:py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
-          <div className="bg-white p-6 sm:p-8 md:p-12 rounded-lg shadow-sm">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base sm:text-lg font-medium">Name</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="Enter your full name" 
-                          className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="course"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base sm:text-lg font-medium">Course</FormLabel>
-                      <FormControl>
-                        <Input 
-                          placeholder="Enter your course or facility name" 
-                          className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="role"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-base sm:text-lg font-medium">Role</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-center">
+                Free Trial Request
+              </CardTitle>
+              <CardDescription className="text-center">
+                Tell us about your course and we'll get you set up with 4Under.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Name *</FormLabel>
                         <FormControl>
-                          <SelectTrigger className="py-3 sm:py-4 text-base sm:text-lg min-h-[48px] touch-manipulation">
-                            <SelectValue placeholder="Select your role" />
-                          </SelectTrigger>
+                          <Input placeholder="Your full name" {...field} />
                         </FormControl>
-                        <SelectContent>
-                          <SelectItem value="general-manager">General Manager</SelectItem>
-                          <SelectItem value="golf-professional">Golf Professional</SelectItem>
-                          <SelectItem value="course-superintendent">Course Superintendent</SelectItem>
-                          <SelectItem value="operations-manager">Operations Manager</SelectItem>
-                          <SelectItem value="owner">Owner</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-medium">Email</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="email" 
-                          placeholder="Enter your email address" 
-                          className="py-3 text-lg"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="course"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Course Name *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Golf course or facility name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-lg font-medium">Phone</FormLabel>
-                      <FormControl>
-                        <Input 
-                          type="tel" 
-                          placeholder="Enter your phone number" 
-                          className="py-3 text-lg"
-                          {...field} 
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                  <FormField
+                    control={form.control}
+                    name="role"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Role *</FormLabel>
+                        <FormControl>
+                          <Input placeholder="General Manager, Pro Shop Manager, etc." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-                <div className="text-center pt-8">
-                  <Button 
-                    type="submit" 
-                    className="bg-golf-green text-white px-12 py-4 text-lg hover:bg-golf-hover rounded-lg shadow-lg font-semibold"
-                    disabled={submitDemoMutation.isPending}
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email *</FormLabel>
+                        <FormControl>
+                          <Input type="email" placeholder="your.email@course.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Phone *</FormLabel>
+                        <FormControl>
+                          <Input type="tel" placeholder="(555) 123-4567" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="comments"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Notes (Optional)</FormLabel>
+                        <FormControl>
+                          <Textarea 
+                            placeholder="Tell us about your current pace management challenges or any specific questions..."
+                            rows={4}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <Button
+                    type="submit"
+                    disabled={submitMutation.isPending}
+                    className="w-full bg-golf-green hover:bg-golf-hover text-white py-3 text-lg font-semibold"
                   >
-                    {submitDemoMutation.isPending ? "Submitting..." : "Start My Free Trial"}
+                    {submitMutation.isPending ? "Submitting..." : "Start Free Trial"}
                   </Button>
-                  <p className="text-slate-600 mt-6">
-                    We'll be in touch shortly to schedule your free trial and onboarding call.
-                  </p>
+                </form>
+              </Form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* What's Next Section */}
+      <section className="py-16 sm:py-24 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
+              What Happens Next?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-golf-green text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  1
                 </div>
-              </form>
-            </Form>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">We'll Contact You</h3>
+                <p className="text-slate-600">Within 24 hours to schedule your onboarding session.</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-golf-green text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  2
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Setup Session</h3>
+                <p className="text-slate-600">We'll configure 4Under for your specific course operation.</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-golf-green text-white rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  3
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Start Using 4Under</h3>
+                <p className="text-slate-600">Begin your free trial with full access to all features.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

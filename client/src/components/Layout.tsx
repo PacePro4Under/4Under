@@ -15,9 +15,9 @@ export default function Layout({ children }: LayoutProps) {
     { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
     { name: "Use Cases", href: "/use-cases" },
-    { name: "Start Free Trial", href: "/demo" },
-    { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
+    { name: "Start Free Trial", href: "/start" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -66,7 +66,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile CTA + Menu */}
             <div className="flex items-center space-x-2 lg:hidden">
-              <Link href="/demo" className="hidden sm:block">
+              <Link href="/start" className="hidden sm:block">
                 <button className="bg-golf-green text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-golf-hover transition-colors touch-manipulation">
                   Free Trial
                 </button>

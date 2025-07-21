@@ -1,271 +1,112 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import starterCheckinScreenshot from "@/assets/starter-checkin-screenshot.png";
-import manualCheckpoints1 from "@/assets/manual-checkpoints-1.png";
-import manualCheckpoints2 from "@/assets/manual-checkpoints-2.png";
-import interventionModeScreenshot from "@/assets/intervention-mode.png";
-import tvModeScreenshot from "@/assets/tv-mode-1.png";
-import shotgunScreenshot from "@/assets/shotgun-1.png";
-import rentalSetTracking from "@/assets/rental-set-tracking.png";
-import dashboardScreenshot from "@/assets/dashboard.png";
-import adminPanelScreenshot from "@/assets/admin-panel.png";
 
 export default function Features() {
-  const coreTools = [
+  const features = [
     {
       title: "Starter Check-In",
-      description: "Log names, carts, and confirm pace talks. Tracks who received expectations at the tee."
+      description: "Confirm expectations at the first tee."
     },
     {
-      title: "Manual Checkpoints",
-      description: "Staff can track where any group is (tee, fairway, green) and log checkpoint times."
+      title: "Manual Checkpoints", 
+      description: "Log group position with a single tap."
     },
     {
       title: "Intervention Mode",
-      description: "Pinpoint the exact location that a group needs to be in 20 minutes to get back on pace. Takes the guesswork out of pace management."
+      description: "Real-time coaching tool that sets target location."
     },
     {
-      title: "Real-Time Dashboard",
-      description: "View every group's pace status live. Auto-flags slow play. Includes color-coded pace and group history."
+      title: "Dashboard",
+      description: "See every group's pace status live, color-coded."
     },
     {
-      title: "Shotgun + Split Tee Support",
-      description: "Supports A/B waves, shotgun starts, and hole-by-hole tracking for tournament formats."
+      title: "Shotgun & Split Tee Support",
+      description: "Built for real-world formats."
     },
     {
-      title: "TV Display Mode",
-      description: "Read-only live pace board for pro shops or marshal tents."
+      title: "TV Display",
+      description: "Show pace board in marshal tents or shops."
     },
     {
       title: "PDF Reports",
-      description: "Export daily summaries for management, committees, or record-keeping."
+      description: "Download daily summaries."
     },
     {
-      title: "Rental Set Tracking",
-      description: "Assign and track rental clubs. Alert the starter or pro shop when a set is out."
+      title: "Rental Tracking",
+      description: "Track rental clubs and set alerts."
     },
     {
       title: "Admin Panel",
-      description: "Change pace expectations, control format logic, or manage features on the fly."
+      description: "Adjust pace rules, formats, and defaults in seconds."
     }
   ];
 
-  const results = [
-    "Cut average rounds by 15+ minutes",
-    "Identified slow holes and logjam zones",
-    "Caught carts going out multiple times per day",
-    "Replaced \"heated\" pace conversations with calm, data-backed coaching",
-    "Empowered both senior staff and junior marshals to do their jobs better",
-    "Ended daily call-ins about slow play at our own course"
-  ];
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-white py-12 sm:py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
-            What 4Under Does — In Plain Terms
-          </h1>
-          <div className="text-base sm:text-lg text-slate-700 max-w-3xl mx-auto space-y-4 sm:space-y-6">
-            <p>You know the drill:</p>
-            <ul className="text-left list-disc list-inside space-y-2 text-slate-600 leading-relaxed">
-              <li>The tee sheet's packed.</li>
-              <li>Golfers are calling the shop about slow play.</li>
-              <li>Your marshal has a radio, but no proof.</li>
-              <li>You're relying on gut, memory, and guesswork.</li>
-            </ul>
-            <p className="font-semibold text-slate-900 leading-relaxed">
-              4Under changes that. It gives your team real-time visibility, structure, and reporting to manage pace of play with confidence — and ditch the pen and paper once and for all.
+      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              A Simple System That Changes Everything
+            </h1>
+            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+              Comprehensive pace management tools designed by golf professionals for real-world operations.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Core Tools Section */}
-      <section className="bg-slate-50 py-12 sm:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-slate-900 mb-8 sm:mb-12 text-center">Core Tools</h2>
-          <div className="space-y-8">
-            {coreTools.map((tool, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">{tool.title}</h3>
-                <p className="text-lg text-slate-700">{tool.description}</p>
-                {/* Screenshots for specific tools, placeholder for others */}
-                {tool.title === "Starter Check-In" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={starterCheckinScreenshot}
-                      alt="Starter Check-In interface showing how to log names, carts, and pace talks"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0) scale(1.001)'
-                      } as React.CSSProperties}
-                    />
-                  </div>
-                ) : tool.title === "Manual Checkpoints" ? (
-                  <div className="mt-6 space-y-4">
-                    <img 
-                      src={manualCheckpoints1}
-                      alt="Manual Checkpoints interface showing staff tracking group locations"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0) scale(1.001)'
-                      } as React.CSSProperties}
-                    />
-                    <img 
-                      src={manualCheckpoints2}
-                      alt="Manual Checkpoints detailed view with checkpoint timing options"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0) scale(1.001)'
-                      } as React.CSSProperties}
-                    />
-                  </div>
-                ) : tool.title === "Intervention Mode" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={interventionModeScreenshot}
-                      alt="Intervention Mode showing precise location targets for groups to get back on pace within 20 minutes"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.3) brightness(1.1) saturate(1.2)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0) scale(1.001)'
-                      } as React.CSSProperties}
-                    />
-                  </div>
-                ) : tool.title === "Real-Time Dashboard" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={dashboardScreenshot}
-                      alt="Real-Time Dashboard showing live pace status with color-coded groups and intervention controls"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
-                      }}
-                    />
-                  </div>
-                ) : tool.title === "Shotgun + Split Tee Support" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={shotgunScreenshot}
-                      alt="Mass Shotgun Start configuration with multiple groups starting at different holes"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
-                      }}
-                    />
-                  </div>
-                ) : tool.title === "TV Display Mode" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={tvModeScreenshot}
-                      alt="TV Display Mode showing today's round times and pace statistics"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
-                      }}
-                    />
-                  </div>
-                ) : tool.title === "Rental Set Tracking" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={rentalSetTracking}
-                      alt="Rental Club Sets management interface with assignment tracking and status monitoring"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
-                      }}
-                    />
-                  </div>
-                ) : tool.title === "Admin Panel" ? (
-                  <div className="mt-6">
-                    <img 
-                      src={adminPanelScreenshot}
-                      alt="Admin Panel settings for pace of play configuration and status thresholds"
-                      className="w-full h-auto rounded-lg shadow-md border border-slate-200"
-                      style={{ 
-                        imageRendering: 'crisp-edges', 
-                        maxWidth: '100%',
-                        filter: 'contrast(1.1) brightness(1.02)',
-                        backfaceVisibility: 'hidden',
-                        transform: 'translateZ(0)'
-                      }}
-                    />
-                  </div>
-                ) : (
-                  <div className="mt-6 bg-slate-100 h-32 rounded-lg flex items-center justify-center">
-                    <span className="text-slate-400 text-sm">Screenshot placeholder</span>
-                  </div>
-                )}
+      {/* Features Grid */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-2xl md:text-4xl font-bold text-slate-900 mb-12 text-center">Real Results from the Field</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {results.map((result, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-slate-50 rounded-lg">
-                <div className="w-6 h-6 bg-golf-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-white text-sm font-bold">✓</span>
-                </div>
-                <p className="text-lg text-slate-700 font-medium">{result}</p>
-              </div>
-            ))}
+      {/* Section Outro */}
+      <section className="py-16 sm:py-24 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              Built for Golf Operations
+            </h2>
+            <p className="text-xl text-slate-600 leading-relaxed">
+              What started as a tool to track slow days became the all-in-one pace solution your course has been waiting for.
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-golf-green py-16">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            Ready to Transform Your Course Operations?
+      <section className="py-16 sm:py-24 bg-golf-green text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            See How It Works For Your Course
           </h2>
-          <p className="text-lg text-white/90 mb-8">
-            See how 4Under can streamline your pace-of-play management.
+          <p className="text-xl mb-8 text-white/90">
+            Get two weeks of full access plus a 1-on-1 onboarding session.
           </p>
-          <Link href="/demo">
-            <Button className="bg-white text-golf-green px-12 py-4 text-lg hover:bg-slate-100 rounded-lg shadow-lg font-semibold">
-              Start Your Free Trial
-            </Button>
-          </Link>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/start">
+              <Button size="lg" className="bg-white text-golf-green hover:bg-slate-100 px-8 py-4 text-lg font-semibold">
+                Start Free Trial
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-golf-green px-8 py-4 text-lg font-semibold">
+                Let's Talk Shop
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
     </div>

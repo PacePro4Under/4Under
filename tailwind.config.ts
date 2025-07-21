@@ -61,6 +61,9 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        "golf-green": "var(--golf-green)",
+        "golf-hover": "var(--golf-hover)",
+        "golf-light": "var(--golf-light)",
       },
       keyframes: {
         "accordion-down": {

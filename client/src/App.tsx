@@ -43,9 +43,9 @@ function Router() {
             <Route path="/" component={Home} />
             <Route path="/features" component={Features} />
             <Route path="/use-cases" component={UseCases} />
-            <Route path="/demo" component={RequestDemo} />
-            <Route path="/contact" component={Contact} />
             <Route path="/faq" component={FAQ} />
+            <Route path="/start" component={RequestDemo} />
+            <Route path="/contact" component={Contact} />
             <Route path="/privacy" component={Privacy} />
             <Route path="/terms" component={Terms} />
             <Route component={NotFound} />

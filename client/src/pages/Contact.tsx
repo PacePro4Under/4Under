@@ -1,104 +1,121 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
-import { z } from "zod";
-import { Mail, Phone, Clock } from "lucide-react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { useContentByPage, getContentValue } from "@/hooks/useContent";
-
-const contactFormSchema = z.object({
-  firstName: z.string().min(2, "First name must be at least 2 characters"),
-  lastName: z.string().min(2, "Last name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  subject: z.string().min(1, "Please select a subject"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormData = z.infer<typeof contactFormSchema>;
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const { content, isLoading } = useContentByPage('contact');
-  
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const submitContactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Message Sent!",
-        description: "We'll respond within 24 hours.",
-      });
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "There was a problem sending your message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    submitContactMutation.mutate(data);
-  };
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header Section */}
-      <section className="bg-white py-12 sm:py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-slate-900 mb-6 sm:mb-8 leading-tight">
-            {isLoading ? 'Loading...' : getContentValue(content, 'contact_page_title', 'Have a question? Want to talk through your course\'s pace challenges?')}
-          </h1>
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+              Let's Talk Shop
+            </h1>
+            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+              Want to see how 4Under fits your course? Let's talk golf ops.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="bg-slate-50 py-12 sm:py-16">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <div className="bg-white p-8 sm:p-12 rounded-lg shadow-sm">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-golf-light rounded-full flex items-center justify-center mx-auto mb-6 sm:mb-8">
-              <Mail className="golf-green h-8 w-8 sm:h-10 sm:w-10" />
-            </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-4 sm:mb-6 break-all">
-              cameron.cox.golf@gmail.com
+      {/* Contact Information */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* Email Contact */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold text-slate-900 mb-4">
+                  Email
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 mb-6">
+                  Get in touch directly with Cameron Cox, Founder & PGA Professional
+                </p>
+                <a 
+                  href="mailto:cameron.cox.golf@gmail.com"
+                  className="inline-block"
+                >
+                  <Button 
+                    size="lg" 
+                    className="bg-golf-green hover:bg-golf-hover text-white px-8 py-4 text-lg font-semibold"
+                  >
+                    cameron.cox.golf@gmail.com
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Instagram Contact */}
+            <Card className="shadow-lg hover:shadow-xl transition-shadow">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl font-bold text-slate-900 mb-4">
+                  Instagram
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-slate-600 mb-6">
+                  Follow along for golf operations insights and 4Under updates
+                </p>
+                <a 
+                  href="https://www.instagram.com/cameron.cox.golf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <Button 
+                    variant="outline"
+                    size="lg" 
+                    className="border-2 border-golf-green text-golf-green hover:bg-golf-green hover:text-white px-8 py-4 text-lg font-semibold"
+                  >
+                    @cameron.cox.golf
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Start CTA */}
+      <section className="py-16 sm:py-24 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+              Ready to Get Started?
             </h2>
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-              You'll speak directly with Cameron — a PGA professional who built 4Under from the ground up to fix pace of play the right way.
+            <p className="text-xl text-slate-600 leading-relaxed mb-8">
+              Skip the call and start your free trial today. We'll set up your onboarding session after you sign up.
             </p>
+            
+            <Link href="/start">
+              <Button size="lg" className="bg-golf-green hover:bg-golf-hover text-white px-8 py-4 text-lg font-semibold">
+                Start Free Trial
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
+              Built by Golf Professionals
+            </h2>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-slate-600 leading-relaxed mb-6">
+                4Under was created by Cameron Cox, a PGA Professional who has lived the frustrations of pace management on the course.
+              </p>
+              <p className="text-xl text-slate-600 leading-relaxed">
+                We understand golf operations because we've been there. Every feature was designed to solve real problems that golf professionals face every day.
+              </p>
+            </div>
           </div>
         </div>
       </section>
