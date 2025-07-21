@@ -31,15 +31,15 @@ export default function Layout({ children }: LayoutProps) {
       {/* Navigation */}
       <nav className="bg-gradient-to-r from-white to-slate-50 shadow-lg border-b-2 border-golf-green sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-18 sm:h-20 lg:h-22">
+          <div className="flex justify-between items-center h-16 sm:h-18">
             {/* Logo & Brand */}
-            <Link href="/" className="flex items-center space-x-4 touch-manipulation group">
+            <Link href="/" className="flex items-center space-x-3 touch-manipulation group">
               <Logo />
-              <div className="block">
-                <span className="text-2xl sm:text-3xl lg:text-4xl font-bold golf-green group-hover:text-golf-hover transition-colors">
+              <div className="hidden sm:block">
+                <span className="text-xl font-bold golf-green group-hover:text-golf-hover transition-colors">
                   4Under
                 </span>
-                <div className="text-sm sm:text-base text-slate-600 font-medium -mt-1">
+                <div className="text-xs text-slate-500 font-medium">
                   Pace of Play System
                 </div>
               </div>
@@ -121,11 +121,8 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center mb-6">
-                <div className="flex items-center space-x-4">
-                  <Logo />
-                  <span className="text-2xl font-bold text-white">4Under</span>
-                </div>
+              <div className="flex items-center mb-4">
+                <Logo />
               </div>
               <p className="text-slate-400 mb-4 text-sm sm:text-base leading-relaxed">
                 Professional pace-of-play tracking built by golf pros, for golf pros. Transform your course operations with our efficient, affordable solution.

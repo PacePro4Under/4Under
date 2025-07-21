@@ -5,35 +5,35 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white to-slate-50 section-spacing">
-        <div className="container-standard">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="font-bold text-slate-900 mb-8 leading-tight">
+      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
               Pace of play shouldn't be a guessing game.
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
               4Under gives your marshals live pace data to manage rounds with confidence — no GPS or downloads required.
             </p>
             
             {/* Benefits List */}
-            <div className="max-w-3xl mx-auto mb-16 space-y-6">
-              <div className="flex items-start space-x-4 text-left">
-                <div className="w-3 h-3 bg-golf-green rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-lg sm:text-xl text-slate-700 leading-relaxed">Reduce average round times by 15+ minutes</span>
+            <div className="max-w-2xl mx-auto mb-10 space-y-3 text-left">
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-golf-green rounded-full"></div>
+                <span className="text-lg text-slate-700">Reduce average round times by 15+ minutes</span>
               </div>
-              <div className="flex items-start space-x-4 text-left">
-                <div className="w-3 h-3 bg-golf-green rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-lg sm:text-xl text-slate-700 leading-relaxed">Eliminate slow play complaints and refund demands</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-golf-green rounded-full"></div>
+                <span className="text-lg text-slate-700">Eliminate slow play complaints and refund demands</span>
               </div>
-              <div className="flex items-start space-x-4 text-left">
-                <div className="w-3 h-3 bg-golf-green rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-lg sm:text-xl text-slate-700 leading-relaxed">Empower marshals with structure, not stress</span>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-golf-green rounded-full"></div>
+                <span className="text-lg text-slate-700">Empower marshals with structure, not stress</span>
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/start">
-                <Button size="lg" className="btn-primary min-h-[56px] px-12 text-lg font-semibold rounded-xl">
+                <Button size="lg" className="bg-golf-green hover:bg-golf-hover text-white px-8 py-4 text-lg font-semibold shadow-lg">
                   Start Free Trial
                 </Button>
               </Link>
@@ -43,10 +43,10 @@ export default function Home() {
       </section>
 
       {/* Comparison Table Section */}
-      <section className="section-spacing bg-white">
-        <div className="container-standard">
-          <div className="text-center mb-20">
-            <h2 className="font-bold text-slate-900 mb-6">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               How Most Courses Manage Pace vs. How 4Under Does It
             </h2>
           </div>
@@ -102,10 +102,10 @@ export default function Home() {
       </section>
 
       {/* How It Works Section */}
-      <section className="section-spacing bg-slate-50">
-        <div className="container-standard">
-          <div className="text-center mb-20">
-            <h2 className="font-bold text-slate-900 mb-6">
+      <section className="py-16 sm:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
               How It Works
             </h2>
           </div>
