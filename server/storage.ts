@@ -207,7 +207,7 @@ export class MemStorage implements IStorage {
       {
         id: this.currentSiteContentId++,
         key: "home_quote_text",
-        value: "It started as a simple tool to log slow rounds and track average pace per day. But once we put it in the hands of our team, it became something so much bigger. 4Under turned into a complete system to help courses coach players, spot issues early, and run smoother, faster, more professional golf operations — no GPS required.",
+        value: "I've been a Head Pro for 15 years, and I built 4Under because I got tired of watching pace problems ruin the experience for my members and guests.",
         contentType: "text",
         page: "home",
         section: "quote",

@@ -73,13 +73,13 @@ export default function Features() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+      <section className="relative bg-gradient-to-br from-white to-slate-50 section-spacing">
+        <div className="container-standard">
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="font-bold text-slate-900 mb-8 leading-tight">
               A Simple System That Changes Everything
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto">
               Comprehensive pace management tools designed by golf professionals for real-world operations.
             </p>
           </div>
@@ -87,14 +87,14 @@ export default function Features() {
       </section>
 
       {/* Features Grid with Screenshots */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      <section className="section-spacing bg-white">
+        <div className="container-standard">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">{feature.description}</p>
+              <div key={index} className="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-lg">{feature.description}</p>
                 </div>
                 <div className="aspect-video bg-slate-100 overflow-hidden">
                   <img 
@@ -110,15 +110,22 @@ export default function Features() {
       </section>
 
       {/* Section Outro */}
-      <section className="py-16 sm:py-24 bg-slate-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+      <section className="section-spacing bg-slate-50">
+        <div className="container-standard">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="font-bold text-slate-900 mb-8">
               Built for Golf Operations
             </h2>
             <p className="text-xl text-slate-600 leading-relaxed">
               What started as a tool to track slow days became the all-in-one pace solution your course has been waiting for.
             </p>
+            <div className="mt-12">
+              <Link href="/start">
+                <Button size="lg" className="btn-primary min-h-[56px] px-12 text-lg font-semibold rounded-xl">
+                  Start Free Trial
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

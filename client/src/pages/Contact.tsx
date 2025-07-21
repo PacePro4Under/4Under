@@ -6,13 +6,13 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+      <section className="relative bg-gradient-to-br from-white to-slate-50 section-spacing">
+        <div className="container-standard">
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="font-bold text-slate-900 mb-8 leading-tight">
               Let's Talk Shop
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto">
               Want to see how 4Under fits your course? Let's talk golf ops.
             </p>
           </div>
@@ -20,8 +20,8 @@ export default function Contact() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="section-spacing bg-white">
+        <div className="container-standard max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Email Contact */}
@@ -41,7 +41,7 @@ export default function Contact() {
                 >
                   <Button 
                     size="lg" 
-                    className="bg-golf-green hover:bg-golf-hover text-white px-8 py-4 text-lg font-semibold"
+                    className="btn-primary min-h-[56px] px-8 text-lg font-semibold rounded-xl"
                   >
                     cameron.cox.golf@gmail.com
                   </Button>
@@ -69,7 +69,7 @@ export default function Contact() {
                   <Button 
                     variant="outline"
                     size="lg" 
-                    className="border-2 border-golf-green text-golf-green hover:bg-golf-green hover:text-white px-8 py-4 text-lg font-semibold"
+                    className="border-2 border-golf-green text-golf-green hover:bg-golf-green hover:text-white min-h-[56px] px-8 text-lg font-semibold rounded-xl"
                   >
                     @cameron.cox.golf
                   </Button>

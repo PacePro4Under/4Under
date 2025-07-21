@@ -5,13 +5,13 @@ export default function UseCases() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-white py-16 sm:py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+      <section className="relative bg-gradient-to-br from-white to-slate-50 section-spacing">
+        <div className="container-standard">
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="font-bold text-slate-900 mb-8 leading-tight">
               One Tool. Multiple Use Cases.
             </h1>
-            <p className="text-xl sm:text-2xl text-slate-600 mb-8 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-slate-600 mb-12 leading-relaxed max-w-4xl mx-auto">
               No GPS. No app. No install. Built for real-world operations by golf professionals who've lived the problems.
             </p>
           </div>
@@ -19,9 +19,9 @@ export default function UseCases() {
       </section>
 
       {/* Use Cases Grid */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="section-spacing bg-white">
+        <div className="container-standard">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             {/* Public Courses */}
             <div className="bg-slate-50 p-8 rounded-xl">
