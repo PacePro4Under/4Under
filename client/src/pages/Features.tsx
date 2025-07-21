@@ -1,43 +1,72 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
+// Import screenshots
+import starterCheckinImg from "@/assets/starter-checkin-screenshot.png";
+import manualCheckpoints1Img from "@/assets/manual-checkpoints-1.png";
+import manualCheckpoints2Img from "@/assets/manual-checkpoints-2.png";
+import interventionModeImg from "@/assets/intervention-mode.png";
+import dashboardImg from "@/assets/dashboard.png";
+import shotgunImg from "@/assets/shotgun-1.png";
+import tvModeImg from "@/assets/tv-mode-1.png";
+import rentalTrackingImg from "@/assets/rental-set-tracking.png";
+import adminPanelImg from "@/assets/admin-panel.png";
+
 export default function Features() {
   const features = [
     {
       title: "Starter Check-In",
-      description: "Confirm expectations at the first tee."
+      description: "Confirm expectations at the first tee.",
+      image: starterCheckinImg,
+      alt: "Starter check-in interface showing group name, cart number and tee time confirmation"
     },
     {
       title: "Manual Checkpoints", 
-      description: "Log group position with a single tap."
+      description: "Log group position with a single tap.",
+      image: manualCheckpoints1Img,
+      alt: "Manual checkpoint tracking interface showing simple tap controls for tee, fairway, green"
     },
     {
       title: "Intervention Mode",
-      description: "Real-time coaching tool that sets target location."
+      description: "Real-time coaching tool that sets target location.",
+      image: interventionModeImg,
+      alt: "Intervention mode screen showing where groups need to be with specific timing targets"
     },
     {
       title: "Dashboard",
-      description: "See every group's pace status live, color-coded."
+      description: "See every group's pace status live, color-coded.",
+      image: dashboardImg,
+      alt: "Live dashboard showing all groups with color-coded pace status indicators"
     },
     {
       title: "Shotgun & Split Tee Support",
-      description: "Built for real-world formats."
+      description: "Built for real-world formats.",
+      image: shotgunImg,
+      alt: "Shotgun tournament view showing multiple groups across different holes"
     },
     {
       title: "TV Display",
-      description: "Show pace board in marshal tents or shops."
+      description: "Show pace board in marshal tents or shops.",
+      image: tvModeImg,
+      alt: "TV display mode showing large format pace tracking for public viewing"
     },
     {
-      title: "PDF Reports",
-      description: "Download daily summaries."
+      title: "Checkpoint Details",
+      description: "Detailed tracking with timestamps and notes.",
+      image: manualCheckpoints2Img,
+      alt: "Detailed checkpoint view with timestamps and group progress tracking"
     },
     {
       title: "Rental Tracking",
-      description: "Track rental clubs and set alerts."
+      description: "Track rental clubs and set alerts.",
+      image: rentalTrackingImg,
+      alt: "Rental equipment tracking interface with alerts and return reminders"
     },
     {
       title: "Admin Panel",
-      description: "Adjust pace rules, formats, and defaults in seconds."
+      description: "Adjust pace rules, formats, and defaults in seconds.",
+      image: adminPanelImg,
+      alt: "Admin panel showing configuration options for pace rules and course settings"
     }
   ];
 
@@ -57,14 +86,23 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Features Grid with Screenshots */}
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+              <div key={index} className="bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow">
+                <div className="aspect-video bg-slate-100 overflow-hidden">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.alt}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
