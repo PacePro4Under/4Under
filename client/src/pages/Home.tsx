@@ -153,7 +153,7 @@ export default function Home() {
             </h2>
             
             <blockquote className="text-2xl sm:text-3xl text-slate-700 italic leading-relaxed mb-8">
-              "I didn't need a GPS map. I needed a tool to stop slow rounds <em>before</em> they became problems — and give my marshals real leverage in player conversations. So I built it."
+              "It started as a simple tool to log slow rounds and track average pace per day. But once we put it in the hands of our team, it became something so much bigger. 4Under turned into a complete system to help courses coach players, spot issues early, and run smoother, faster, more professional golf operations — no GPS required."
             </blockquote>
             
             <p className="text-lg text-slate-600 font-medium">
